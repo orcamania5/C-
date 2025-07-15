@@ -118,13 +118,13 @@
 //	return 0;
 //}
 
-//[~페이지16 문제4~]
+////[~페이지16 문제4~]
 //myMoney의 범위는 1000 ~ 10000.
 //coin500의 범위는 0~3 * 500 ==> 0 ~ 1500.
 //coin100의 범위는 0 ~ 4999 / 100 * 100 ==> 0 ~ 4900.
 
-#define _CRT_SECURE_NO_WARNINGS
-#include<stdio.h>
+//#define _CRT_SECURE_NO_WARNINGS
+//#include<stdio.h>
 
 //int main()
 //{
@@ -215,23 +215,25 @@
 //}
 
 ////[~페이지19 문제1~]
+//#include<stdio.h>
 //int main()
 //{
 //	int input;
-//	printf("값은 입력하세요 ==> ");
+//	printf("값을 입력하세요 ==> ");
 //	scanf("%d", &input);
 //	
 //	if (input == 0)
 //		printf("입력한 값은 0입니다.\n");
-//	else if (input % 2 >= 1)
-//		printf("입력한 값은 홀수입니다.\n");
-//	else if (input / 2 >= 1)
-//		printf("입력한 값은 짝수입니다.\n");
+//	else if (input > 0)
+//		printf("입력한 값은 양수입니다.\n");
+//	else
+//		printf("입력한 값은 음수입니다.\n");
 //	
 //	return 0;
 //}
 
 ////[~페이지19 문제2~]
+//#include<stdio.h>
 //int main()
 //{
 //	int input;
@@ -275,6 +277,7 @@
 //}
 
 ////[~페이지20 문제3~]
+//#include<stdio.h>
 //int main()
 //{
 //	int y_age;
@@ -282,16 +285,17 @@
 //	scanf("%d", &y_age);
 //
 //	if (y_age >= 15)
-//		printf("전체, 12세, 15세 관람가 영화를 볼 수 있습니다.\n");
-//	else if (y_age >=12)
-//		printf("전체, 12세 관람가 영화를 볼 수 있습니다.\n");
-//	else
-//		printf("전체 관람가 영화를 볼 수 있습니다.\n");
+//		printf("15세, ");
+//	if (y_age >= 12)
+//		printf("12세, ");
+//
+//	printf("전체 관람가 영화를 볼 수 있습니다.");
 //
 //	return 0;
 //}
 
 //[~페이지20 문제4~]
+//#include<stdio.h>
 //int main()
 //{
 //	char initial;
@@ -300,7 +304,7 @@
 //
 //	if (initial >= 97 && initial <= 122)
 //		printf("소문자입니다.\n");
-//	else if (initial >= 65 && initial <= 90)
+//	else if (initial >= 0x41 && initial <= 'Z')//문자를 할 때, 10진수말고 hexademical 값이나 ''하고 문자그대로를 입력해도됨.
 //		printf("대문자입니다.\n");
 //	else
 //		printf("소문자도 대문자도 아닙니다!\n");
@@ -436,28 +440,20 @@
 //}
 
 ////[~페이지22 문제7~]
+//#include<stdio.h>
+//
 //int main()
 //{
 //	int input;
 //	printf("값을 입력하시오 ==> ");
 //	scanf("%d", &input);
 //
-//	if ((input % 3) == 0 && (input /3 ) >= 1)
-//	{
-//		printf("3의 배수입니다.\n");
-//		if ((input % 6) == 0 && (input / 6) >= 1)
-//		{
-//			printf("6의 배수입니다.\n");
-//			if ((input % 9) == 0 && (input / 9) >= 1)
-//			{
-//				printf("9의 배수입니다.\n");
-//			}
-//		}
-//		else
-//			if ((input % 9) == 0 && (input / 9) >= 1)
-//			{
-//				printf("9의 배수입니다.\n");
-//			}
+//	if (input % 3 == 0) {
+//		printf("input은 3의 배수입니다.\n");
+//		if (input % 6 == 0)
+//			printf("input은 6의 배수입니다.\n");
+//		if (input % 9 == 0)
+//			printf("input은 9의 배수입니다.\n");
 //	}
 //	return 0;
 //}
@@ -492,6 +488,8 @@
 //}
 
 ////[~페이지24 문제1~]
+//#include<stdio.h>
+//
 //int main()
 //{
 //	int input1, input2;
@@ -512,6 +510,8 @@
 //}
 
 ////[~페이지24 문제2~]
+//#include<stdio.h>
+//
 //int main()
 //{
 //	int month;
@@ -583,8 +583,11 @@
 //}
 
 ////[~페이지25 문제4~]
+//#include<stdio.h>
+//
 //int main()
 //{
+//	const int option = 3;//노트: int option 과 const int option 의 차이점은 전자인 int를 쓰면 option 이 변수가 되어 중간에 값이 바뀔 수 있는 가능성이 있음. switch-case 코드는 case 뒤에 오는 수자값이 무조건 상수 = constant 값이어만하고 바뀔 수 있는 값을 넣으면 에러가 뜸. 따라서 const 라는 명령을 써서 상수로 고정시켜줘야 코드가 돌아감.
 //	int input;
 //	printf("메뉴를 선택하세요");
 //	printf("1.새 게임 2.이어하기 3.옵션\n");
@@ -598,7 +601,7 @@
 //	case 2:
 //		printf("세이브 데이터 로드.\n");
 //		break;
-//	case 3:
+//	case option:
 //		printf("옵션 세팅.\n");
 //		break;
 //	default:
@@ -608,18 +611,22 @@
 //}
 
 ////[~페이지25 문제5~]
+//#include<stdio.h>
+//
 //int main()
 //{
 //	int number;
-//	printf("0~9의 값을 입력하세요 ==> \n");
+//	printf("0~9의 값을 입력하세요 ==> ");
 //	scanf("%d", &number);
 //
 //	switch (number)
 //	{
-//	case 3: printf("짝\n");	break;
-//	case 6: printf("짝\n");	break;
-//	case 9: printf("짝\n");	break;
+//	case 3: //노트: case 뒤에는 꼭 세미콜론(;)이 오지 않아도 된다! 그리고 꼭 break 명령어가 오지 않아도 된다!
+//	case 6: 
+//	case 9: 
+//		printf("짝\n");
 //	}
+//
 //	return 0;
 //}
 
@@ -632,7 +639,7 @@
 //	{
 //	case 'x': printf("알파벳 x 입력.\n");
 //		break;
-//	default: printf("엑스표 입력.\n");
+//	case 'X': printf("엑스표 입력.\n");
 //		break;
 //	}
 //	return 0;
@@ -689,51 +696,206 @@
 //	return 0;
 //}
 
-//[~페이지27 문제8~]
+////[~페이지27 문제8~]
+//#include<stdio.h>
+//
+//int main()
+//{
+//	int appetizer, mainDish, dessert;
+//	scanf("%d %d %d", &appetizer, &mainDish, &dessert);
+//
+//	switch (appetizer)
+//	{
+//	case 1:
+//		printf("캐비어,");
+//		break;
+//	case 2:
+//		printf("샐러드,");
+//		break;
+//	case 3:
+//		printf("푸아그라,");
+//		break;
+//	}
+//
+//	switch (mainDish)
+//	{
+//	case 1:
+//		printf(" 스테이크,");
+//		break;
+//	case 2:
+//		printf(" 생선요리,");
+//		break;
+//	case 3:
+//		printf(" 양갈비,");
+//		break;
+//	}
+//
+//	switch (dessert)
+//	{
+//	case 1:
+//		printf(" 케잌");
+//		break;
+//	case 2:
+//		printf(" 아이스크림");
+//		break;
+//	case 3:
+//		printf(" 초콜릿무스");
+//		break;
+//	}
+//
+//	printf("입니다.\n");
+//	return 0;
+//}
+
+//#include<stdio.h>
+//
+//int main()
+//{
+//	int i = 0;
+//	while (i < 100)
+//	{
+//		printf("%3d(%02x)", i, i);
+//		if (i >= 70 && i < 80) { i++; continue; }
+//		if (i % 10 == 9)	printf("\n");
+//		if (i == 93)		break;
+//		i++;
+//	}
+//	return 0;
+//}
+
+//int main()
+//{
+//	while (1)
+//	{
+//		printf("조건이 참일 경우 반복출력\n");
+//	}
+//	return 0;
+//}
+
+//int main()
+//{
+//	int count = 0;
+//
+//	while (count < 3)
+//	{
+//		printf("현재 count: %d\n", count);
+//		printf("count 가 3보다 작은 동안 반복\n");
+//		count++;
+//	}
+//	return 0;
+//}
+
+//int main()
+//{
+//	int count = 3;
+//
+//	while (count > 0)
+//	{
+//		printf("현재 count: %d\n", count);
+//		printf("count 가 0보다 작은 동안 반복\n");
+//		count--;
+//	}
+//	return 0;
+//}
+
+////[~페이지29 문제1~]
+//#include<stdio.h>
+//
+//int main()
+//{
+//	int count = 0;
+//
+//	while (count < 6)
+//	{
+//		printf("현재 %d번째 출력.\n", count);
+//		printf("C\n");
+//		count++;
+//	}
+//	return 0;
+//}
+
+////[~페이지29 문제2~]
+//#include<stdio.h>
+//
+//int main()
+//{
+//	int count = -10;
+//
+//	while (count <= 0)
+//	{
+//		printf("%d\n", count);
+//		count++;
+//	}
+//	return 0;
+//}
+
+////[~페이지29 문제3~]
+//#include<stdio.h>
+//
+//int main()
+//{
+//	int count = 0;
+//
+//	while (count <= 100)
+//	{
+//		printf("%d ", count);
+//		count += 5;
+//	}
+//
+//	return 0;
+//}
+
+//#include<stdio.h>
+//
+//int main()
+//{
+//	int count = 3;
+//	while (count)
+//	{
+//		if (count == 1)
+//		{
+//			break;
+//		}
+//		printf("현재 count : %d\n", count);
+//		printf("count가 0이 아니면 반복\n");
+//		count--;
+//	}
+//	return 0;
+//}
+
+//#include<stdio.h>
+//
+//int main()
+//{
+//	char alphabet;
+//	while (1)
+//	{
+//		printf("알파벳을 입력해주세요(다른 것 입력시 다시입력):");
+//		scanf("%c", &alphabet);
+//		if (alphabet >= 'a' && alphabet <= 'z')
+//		{
+//			printf("소문자를 입력하셨습니다.\n");
+//		}
+//		else if (alphabet >= 'A' && alphabet <= 'Z')
+//		{
+//			printf("대문자를 입력하셨습니다.\n");
+//		}
+//		else { continue; }
+//		printf("입력한 값 : %c\n", alphabet);
+//	}
+//	return 0;
+//}
+
+#include<stdio.h>
+
 int main()
 {
-	int appetizer, mainDish, dessert;
-	scanf("%d %d %d", &appetizer, &mainDish, &dessert);
 
-	switch (appetizer)
-	{
-	case 1:
-		printf("캐비어,");
-		break;
-	case 2:
-		printf("샐러드,");
-		break;
-	case 3:
-		printf("푸아그라,");
-		break;
-	}
-
-	switch (mainDish)
-	{
-	case 1:
-		printf(" 스테이크,");
-		break;
-	case 2:
-		printf(" 생선요리,");
-		break;
-	case 3:
-		printf(" 양갈비,");
-		break;
-	}
-
-	switch (dessert)
-	{
-	case 1:
-		printf(" 케잌");
-		break;
-	case 2:
-		printf(" 아이스크림");
-		break;
-	case 3:
-		printf(" 초콜릿무스");
-		break;
-	}
-
-	printf("입니다.\n");
-	return 0;
 }
+
+//#include<stdio.h>
+//
+//int main()
+//{
+//
+//}
