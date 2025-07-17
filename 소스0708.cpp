@@ -886,8 +886,8 @@
 //	return 0;
 //}
 
-#define _CRT_SECURE_NO_WARNINGS
-#include<stdio.h>
+//#define _CRT_SECURE_NO_WARNINGS
+//#include<stdio.h>
 
 //int main()
 //{
@@ -929,17 +929,14 @@
 //{
 //	char alphabet = 'A';
 //
-//	while (1)
+//	while (alphabet <= 'Z')
 //	{
-//		if (alphabet >= 'A' && alphabet <= 'Z' && alphabet != 'F')
+//		printf("%c ", alphabet);
+//		alphabet++;
+//		if (alphabet == 'F')
 //		{
-//			printf("%c ", alphabet);
 //			alphabet++;
 //		}
-//		else if (alphabet == 'F')
-//			alphabet++;
-//		else
-//			break;
 //	}
 //	return 0;
 //}
@@ -947,39 +944,30 @@
 ////[~페이지30 문제6~]
 //int main()
 //{
-//	int total = 0, inputA, inputB;
-//	char winner;
+//	int total = 0, inputA;
+//	char winner=0;
 //
 //	while (1)
 //	{
-//		printf("A: ");
+//		printf("%c: ", 'A' + winner);
 //		scanf("%d", &inputA);
-//		total = total + inputA;
+//
+//		if (inputA <1 || inputA >3)
+//		{
+//			printf("다시 입력해주세요.\n");
+//			continue;
+//		}
+//
+//		total += inputA;
 //		printf("=> %d\n", total);
 //		
-//		if (total < 31)
+//		winner = ++winner%2;
+//		if (total >= 31)
 //		{
-//			printf("B: ");
-//			scanf("%d", &inputB);
-//			total = total + inputB;
-//			printf("=> %d\n", total);
-//			if (total < 31)
-//			{
-//				continue;
-//			}
-//			else
-//			{
-//				winner = 'A';
-//				break;
-//			}
-//		}
-//		else
-//		{
-//			winner = 'B';
 //			break;
 //		}
 //	}
-//	printf("%c가 이겼습니다!\n", winner);
+//	printf("%c가 이겼습니다!\n", 'A'+winner);
 //	return 0;
 //}
 
@@ -1119,31 +1107,130 @@
 //}
 
 //[~페이지31 문제5~]
+//#define _CRT_SECURE_NO_WARNINGS
+//#include<stdio.h>
+//int main()
+//{
+//	int select;
+//	enum{EXIT, LOGIN, REGISTER, OPTION, DEVELOPER};
+//	do{
+//	printf("1. 로그인\n2. 회원가입\n3. 옵션\n4. 만든 사람들\n");
+//	printf("값을 입력하세요 ==> ");
+//	scanf("%d", &select);
+//
+//	//switch (select)
+//	//{
+//	//case LOGIN:
+//	//	printf("로그인\n");
+//	//	break;
+//	//case REGISTER:
+//	//	printf("새회원 등록\n");
+//	//	break;
+//	//case OPTION:
+//	//	printf("옵션 세팅\n");
+//	//	break;
+//	//case DEVELOPER:
+//	//	printf("개발자들");
+//	//	break;
+//	//}
+//	} while (select >=1 && select <=4);
+//	printf("프로그램 종료!");
+//	return 0;
+//}
+
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+#include<stdlib.h>
+#include<time.h>
+
 int main()
 {
-	int select;
-	enum{EXIT, LOGIN, REGISTER, OPTION, DEVELOPER};
-	do{
-	printf("1. 로그인\n2. 회원가입\n3. 옵션\n4. 만든 사람들\n");
-	printf("값을 입력하세요 ==> ");
-	scanf("%d", &select);
+	srand((unsigned int)time(NULL));
+	int command;
+	int day = 0;
+	int study = 0;
+	int exercise = 0;
+	int money = 0;
 
-	switch (select)
+	do {
+		printf("\n%d번째 날 !\n", ++day);
+		printf("오늘도 뭐할까요?\n");
+		printf("1. 코딩공부한다.\n2. 헬스를 한다.\n3. 저축을 한다.\n");
+		printf("그외. 끝낸다.\n >>");
+		scanf("%d", &command);
+		if (command <1 || command >3) break;
+		else if (command == 1)
+		{
+			int randInt = rand() % 5 + 1;
+
+			switch (randInt) {
+			case 1: printf("기분이 좋네요.\n");
+			case 3: printf("도서관에서. "); break;
+			case 2: printf("기분이 나빠요.\n");
+			case 4: printf("카페에서 "); break;
+			case 5: printf("학원에서 ");
+			}
+			printf("코딩 공부합니다.\n");
+			study++;
+		}
+		else if (command ==2)
+			exercise++;
+		else if (command ==3)
+			money++;
+		printf("%d %d %d", study, exercise, money); //각 행동을 얼마나 많이 반복했는지 보는 확인코드
+	} while (1);
+
+	if (day <= 3)
 	{
-	case LOGIN:
-		printf("로그인\n");
-		break;
-	case REGISTER:
-		printf("새회원 등록\n");
-		break;
-	case OPTION:
-		printf("옵션 세팅\n");
-		break;
-	case DEVELOPER:
-		printf("개발자들");
-		break;
+		printf("그대로입니다...\n");
 	}
-	} while (select != EXIT);
-	printf("프로그램 종료!");
+	else if (study > exercise && study > money) //1. 코딩공부에 대한 엔딩
+	{
+		int level = study / 8;
+		switch (level)
+		{
+		case 0:
+			printf("코딩새싹이 되었습니다.!\n");
+			break;
+		case 1:
+			printf("프로그래머가 되었습니다.!\n");
+			break;
+		default:
+			printf("풀스택 개발자가 되었습니다.!\n");
+			break;
+		}
+	}
+	else if (exercise > study && exercise > money) //2. 헬스를 한 것에 대한 엔딩
+	{
+		int level = exercise / 8;
+		switch (level)
+		{
+		case 0:
+			printf("체중이 조금 감량했습니다.!\n");
+			break;
+		case 1:
+			printf("체중이 많이 감량했습니다.!\n");
+			break;
+		default:
+			printf("바디빌더가 되었습니다.!\n");
+			break;
+		}
+	}
+	else if (money > exercise && money > study) //3. 저축을 한 것에 대한 엔딩
+	{
+		int level = money / 8;
+		switch (level)
+		{
+		case 0:
+			printf("월세를 낼 수 있게 되었습니다.!\n");
+			break;
+		case 1:
+			printf("전세를 낼 수 있게 되었습니다.!\n");
+			break;
+		default:
+			printf("집을 살 수 있게 되었습니다.!\n");
+			break;
+		}
+	}
 	return 0;
 }
