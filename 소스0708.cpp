@@ -886,16 +886,264 @@
 //	return 0;
 //}
 
+#define _CRT_SECURE_NO_WARNINGS
 #include<stdio.h>
 
-int main()
-{
-
-}
-
-//#include<stdio.h>
-//
 //int main()
 //{
-//
+//	int number, total = 0;
+//	while (1)
+//	{
+//		printf("양수를 입력해주세요(0입력시 종료): ");
+//		scanf("%d", &number);
+//		if (number == 0) { break; }
+//		else if (number < 0) { continue; }
+//		total = total + number;
+//		printf("%d\n", total);
+//	}
+//	return 0;
 //}
+
+////[~페이지30 문제4~]
+//int main()
+//{
+//	int number = 1, multi = 1;
+//
+//	while (1)
+//	{
+//		multi = multi * number;
+//		if (multi < 50000)
+//		{
+//			number++;
+//			continue;
+//		}
+//		else
+//			printf("number = %d", number);
+//			break;
+//	}
+//	return 0;
+//}
+
+////[~페이지30 문제5~]
+//int main()
+//{
+//	char alphabet = 'A';
+//
+//	while (1)
+//	{
+//		if (alphabet >= 'A' && alphabet <= 'Z' && alphabet != 'F')
+//		{
+//			printf("%c ", alphabet);
+//			alphabet++;
+//		}
+//		else if (alphabet == 'F')
+//			alphabet++;
+//		else
+//			break;
+//	}
+//	return 0;
+//}
+
+////[~페이지30 문제6~]
+//int main()
+//{
+//	int total = 0, inputA, inputB;
+//	char winner;
+//
+//	while (1)
+//	{
+//		printf("A: ");
+//		scanf("%d", &inputA);
+//		total = total + inputA;
+//		printf("=> %d\n", total);
+//		
+//		if (total < 31)
+//		{
+//			printf("B: ");
+//			scanf("%d", &inputB);
+//			total = total + inputB;
+//			printf("=> %d\n", total);
+//			if (total < 31)
+//			{
+//				continue;
+//			}
+//			else
+//			{
+//				winner = 'A';
+//				break;
+//			}
+//		}
+//		else
+//		{
+//			winner = 'B';
+//			break;
+//		}
+//	}
+//	printf("%c가 이겼습니다!\n", winner);
+//	return 0;
+//}
+
+//int main()
+//{
+//	int money;
+//	int remain;
+//	printf("## 지폐로 교환일 돈은? ");
+//	scanf("%d", &money);
+//
+//	printf("\n오만 원짜리 ==> %d 장\n", money / 50000);
+//	printf("만 원짜리 ==> %d 장\n", money % 50000 / 10000);
+//	printf("오천 원짜리 ==> %d 장\n", money % 10000 / 5000);
+//	printf("천 원짜리 ==> %d 장\n", money % 5000 / 1000);
+//	printf("지폐로 바꾸지 못한 잔돈 ==> %d 원\n", money % 1000);
+//		
+//	return 0;
+//}
+
+//int main()
+//{
+//	int a;
+//
+//	printf("값을 입력하세요. : ");
+//	scanf("%d", &a);
+//
+//	if (a == 100)
+//		printf("100입니다.\n");
+//	else
+//		printf("100이 아닙니다.\n");
+//	return 0;
+//}
+
+//int main()
+//{
+//	char ch;
+//
+//	printf("A, B, C 키 중 하나를 누르고 Enter를 누르세요: ");
+//	scanf(" %c", &ch);
+//
+//	switch (ch)
+//	{
+//	case 'a': printf("A 키를 눌렀습니다. \n"); break;
+//	case 'A': printf("A 키를 눌렀습니다. \n"); break;
+//	case 'b': printf("B 키를 눌렀습니다. \n"); break;
+//	case 'B': printf("B 키를 눌렀습니다. \n"); break;
+//	case 'c': printf("C 키를 눌렀습니다. \n"); break;
+//	case 'C': printf("C 키를 눌렀습니다. \n"); break;
+//	default: printf("잘못 눌렀습니다. \n");
+//	}
+//	
+//	return 0;
+//}
+
+//int main()
+//{
+//	char ch = 'Z';
+//
+//	if (ch == 'A')
+//		printf("A 출력 \n");
+//	else if (ch == 'B')
+//		printf("B 출력 \n");
+//	else if (ch == 'C')
+//		printf("C 출력 \n");
+//	else printf("모름 \n");
+//
+//	return 0;
+//}
+
+//int main()
+//{
+//	int a = 100;
+//
+//	if (a < 200)
+//	{
+//		printf("a가 200보다 ");
+//		printf("작습니다.\n");
+//	}
+//	else
+//		printf("a가 200보다 큽니다.");
+//
+//	return 0;
+//}
+
+//int main()
+//{
+//	int count = 3;
+//	while (count)
+//	{
+//		if (count == 1)
+//		{
+//			break;
+//		}
+//		printf("현재 count : %d\n", count);
+//		printf("count가 0이 아니면 반복\n");
+//		count--;
+//	}
+//	return 0;
+//}
+
+//int main()
+//{
+//	int temperature = 20;
+//	do
+//	{
+//		printf("현재 온도: %d도\n", temperature);
+//		temperature--;
+//	} while (temperature > 28);
+//	return 0;
+//}
+
+//int main()
+//{
+//	int input;
+//	enum {GAMEOVER, NEWGAME, LOADGAME, OPTION};//???? 무슨코드?
+//	do
+//	{
+//		printf("\n메뉴를 선택하세요.\n");
+//		printf("1.새 게임 2.이어하기 3.옵션 (0:게임종료)\n");
+//		scanf("%d", &input);
+//
+//		switch (input) {
+//		case NEWGAME:
+//			printf("새 게임 시작\n");
+//			break;
+//		case LOADGAME:
+//			printf("세이브 데이터 로드\n");
+//			break;
+//		case OPTION:
+//			printf("옵션 세팅\n");
+//			break;
+//		}
+//
+//	} while (input != GAMEOVER);
+//	printf("게임을 종료합니다.\n");
+//	return 0;
+//}
+
+//[~페이지31 문제5~]
+int main()
+{
+	int select;
+	enum{EXIT, LOGIN, REGISTER, OPTION, DEVELOPER};
+	do{
+	printf("1. 로그인\n2. 회원가입\n3. 옵션\n4. 만든 사람들\n");
+	printf("값을 입력하세요 ==> ");
+	scanf("%d", &select);
+
+	switch (select)
+	{
+	case LOGIN:
+		printf("로그인\n");
+		break;
+	case REGISTER:
+		printf("새회원 등록\n");
+		break;
+	case OPTION:
+		printf("옵션 세팅\n");
+		break;
+	case DEVELOPER:
+		printf("개발자들");
+		break;
+	}
+	} while (select != EXIT);
+	printf("프로그램 종료!");
+	return 0;
+}
