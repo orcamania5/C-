@@ -1143,94 +1143,435 @@
 #include<stdlib.h>
 #include<time.h>
 
+//[~페이지32 문제2~]
+//int main()
+//{
+//	srand((unsigned int)time(NULL));
+//	int command;
+//	int day = 0;
+//	int study = 0;
+//	int exercise = 0;
+//	int money = 0;
+//
+//	do {
+//		printf("\n%d번째 날 !\n", ++day);
+//		printf("오늘도 뭐할까요?\n");
+//		printf("1. 코딩공부한다.\n2. 운동을 한다.\n3. 저축을 한다.\n");
+//		printf("그외. 끝낸다.\n >>");
+//		scanf("%d", &command);
+//		if (command <1 || command >3) break;
+//		else if (command == 1)
+//		{
+//			int randInt = rand() % 5 + 1;
+//
+//			switch (randInt) {
+//			case 1: printf("기분이 좋네요.\n");
+//			case 3: printf("도서관에서. "); break;
+//			case 2: printf("기분이 나빠요.\n");
+//			case 4: printf("카페에서 "); break;
+//			case 5: printf("학원에서 ");
+//			}
+//			printf("코딩 공부합니다.\n");
+//			study++;
+//		}
+//		else if (command ==2)
+//		{
+//			int randInt = rand() % 5 + 1;
+//
+//			switch (randInt) {
+//			case 1: printf("기분이 좋네요.\n");
+//			case 3: printf("헬스장에서 "); break;
+//			case 2: printf("기분이 나빠요.\n");
+//			case 4: printf("테니스장에서 "); break;
+//			case 5: printf("수영장에서 ");
+//			}
+//			printf("운동합니다.\n");
+//			exercise++;
+//		}
+//		else if (command ==3)
+//		{
+//			int randInt = rand() % 5 + 1;
+//
+//			switch (randInt) {
+//			case 1: printf("기분이 좋네요.\n");
+//			case 3: printf("은행에 가서 "); break;
+//			case 2: printf("기분이 나빠요.\n");
+//			case 4: printf("로또에 당첨되서 "); break;
+//			case 5: printf("주식으로 ");
+//			}
+//			printf("돈을 모읍니다.\n");
+//			money++;
+//		}
+//		printf("%d %d %d", study, exercise, money); //각 행동을 얼마나 많이 반복했는지 보는 확인코드
+//	} while (1);
+//
+//	if (day <= 3)
+//	{
+//		printf("그대로입니다...\n");
+//	}
+//	else if (study > exercise && study > money) //1. 코딩공부에 대한 엔딩
+//	{
+//		int level = study / 8;
+//		switch (level)
+//		{
+//		case 0:
+//			printf("코딩새싹이 되었습니다.!\n");
+//			break;
+//		case 1:
+//			printf("프로그래머가 되었습니다.!\n");
+//			break;
+//		default:
+//			printf("풀스택 개발자가 되었습니다.!\n");
+//			break;
+//		}
+//	}
+//	else if (exercise > study && exercise > money) //2. 헬스를 한 것에 대한 엔딩
+//	{
+//		int level = exercise / 8;
+//		switch (level)
+//		{
+//		case 0:
+//			printf("체중이 조금 감량했습니다.!\n");
+//			break;
+//		case 1:
+//			printf("체중이 많이 감량했습니다.!\n");
+//			break;
+//		default:
+//			printf("바디빌더가 되었습니다.!\n");
+//			break;
+//		}
+//	}
+//	else if (money > exercise && money > study) //3. 저축을 한 것에 대한 엔딩
+//	{
+//		int level = money / 8;
+//		switch (level)
+//		{
+//		case 0:
+//			printf("월세를 낼 수 있게 되었습니다.!\n");
+//			break;
+//		case 1:
+//			printf("전세를 낼 수 있게 되었습니다.!\n");
+//			break;
+//		default:
+//			printf("집을 살 수 있게 되었습니다.!\n");
+//			break;
+//		}
+//	}
+//	return 0;
+//}
+
+//[교과서 페이지 251 7번 문제]
+//int main()
+//{
+//	int numStart;
+//	int numEnd;
+//
+//	printf("시작값 ==> ");
+//	scanf("%d", &numStart);
+//	printf("끝값 ==> ");
+//	scanf("%d", &numEnd);
+//
+//	int oddnumber;
+//	if (numStart < numEnd)
+//	{
+//		oddnumber = numStart + 1;
+//		while (oddnumber < numEnd)
+//		{
+//			printf("%d ", oddnumber);
+//			oddnumber += 2;
+//		}
+//	}
+//	else if (numEnd < numStart)
+//	{
+//		oddnumber = numEnd + 1;
+//		while (oddnumber < numStart)
+//		{
+//			printf("%d ", oddnumber);
+//			oddnumber += 2;
+//		}
+//	}
+//	else
+//	
+//	return 0;
+//}
+
+//[교과서 페이지 251 8번 문제]
+//int main()
+//{
+//	int input;
+//	printf("숫자를 여러개 입력: ");
+//	scanf("%d", &input);
+//
+//	int division = 1000;
+//	int dividednumber;
+//	int repeat1000 = 1, repeat100 = 1, repeat10 = 1, repeat1 = 1;
+//	while (input >= 1000)
+//	{
+//		dividednumber = input / division * 2;
+//		while (repeat1000 <= dividednumber)
+//		{
+//			printf("\u2665");
+//			repeat1000++;
+//		}
+//		division = division / 10;
+//		input = input - (dividednumber / 2 * 1000);
+//	}
+//	printf("\n");
+//	
+//	while (input >= 100 && input < 1000)
+//	{
+//		dividednumber = input / division * 2;
+//		while (repeat100 <= dividednumber)
+//		{
+//			printf("\u2665");
+//			repeat100++;
+//		}
+//		division = division / 10;
+//		input = input - (dividednumber / 2 * 100);
+//	}
+//	printf("\n");
+//
+//	while (input >= 10 && input < 100)
+//	{
+//		dividednumber = input / division * 2;
+//		while (repeat10 <= dividednumber)
+//		{
+//			printf("\u2665");
+//			repeat10++;
+//		}
+//		division = division / 10;
+//		input = input - (dividednumber / 2 * 10);
+//	}
+//	printf("\n");
+//
+//	while (input >= 1 && input < 10)
+//	{
+//		dividednumber = input / division * 2;
+//		while (repeat1 <= dividednumber)
+//		{
+//			printf("\u2665");
+//			repeat1++;
+//		}
+//		division = division / 10;
+//		input = input - (dividednumber / 2 * 1);
+//	}
+//
+//	return 0;
+//}
+
+//[교과서 페이지 254 11번 문제]
+//int main()
+//{
+//	int i;
+//	int hap = 0;
+//
+//	i = 1;
+//	while (i <= 100)
+//	{
+//		if (i % 5 == 0 || i % 8 == 0)
+//			hap = hap + i;
+//
+//		i++;
+//	}
+//	printf("5배수와 8배수의 합: %d \n", hap);
+//}
+
+//int main()
+//{
+//	int sheep;
+//	for (sheep = 1; sheep <= 5; sheep++)
+//	{
+//		printf("양 %d마리\n", sheep);
+//	}
+//	printf("잠들었다!\n");
+//	return 0;
+//}
+
+//int main()
+//{
+//	int sheep;
+//	for (sheep = 1; sheep <= 5; sheep++)
+//	{
+//		printf("양 %d마리\n", sheep);
+//		if (sheep == 3)
+//		{
+//			printf("도중에 잠들었다!\n");
+//			break;
+//		}
+//	}
+//	return 0;
+//}
+
+//int main()
+//{
+//	int sheep;
+//	for (sheep = 1; sheep <= 5; sheep++)
+//	{
+//		if (sheep == 3)
+//		{
+//			printf("졸아서 양을 세지 못했다!\n");
+//			continue;
+//		}
+//		printf("양 %d마리\n", sheep);
+//	}
+//	return 0;
+//}
+
+////[~페이지33 문제1~]
+//int main()
+//{
+//	int sheep;
+//	for (sheep = 1; sheep <= 20; sheep++)
+//	{
+//		printf("양 %d마리\n", sheep);
+//	}
+//	printf("잠들었다!\n");
+//	return 0;
+//}
+
+////[~페이지33 문제2~]
+//int main()
+//{
+//	int sheep;
+//	for (sheep = 1; sheep <= 45; sheep++)
+//	{
+//		if (sheep % 10 == 0)
+//		{
+//			printf("깜빡 졸고 말았다!\n");
+//			continue;
+//		}
+//		printf("양 %d마리\n", sheep);
+//	}
+//	return 0;
+//}
+
+//int main()
+//{
+//	int round;
+//	for (round = 0; round < 10; round++)
+//	{
+//		printf("라운드 %d\n", round);
+//	}
+//	return 0;
+//}
+
+//int main()
+//{
+//	int round;
+//	for (round = 0; round <= 10; round++)
+//	{
+//		printf("라운드 %d\n", round);
+//	}
+//	return 0;
+//}
+
+//int main()
+//{
+//	int count;
+//	for (count = 101; count < 111; count++)
+//	{
+//		printf("아파트 %d동\n", count);
+//	}
+//	return 0;
+//}
+
+//int main()
+//{
+//	int number;
+//	int sum_number = 0;
+//	for (number = 1; number <= 20; number++)
+//	{
+//		sum_number = sum_number + number;
+//	}
+//	printf("도합 %d\n", sum_number);
+//	return 0;
+//}
+
+//int main()
+//{
+//	int count;
+//	int number;
+//	printf("반복할 횟수를 입력하세요 : ");
+//	scanf("%d", &count);
+//	for (number = 0; number < count; number++)
+//	{
+//		printf("삐약");
+//	}
+//	printf("\n");
+//	return 0;
+//}
+
+////[~페이지35 문제1~]
+//int main()
+//{
+//	int number;
+//	
+//	for (number = 10; number < 100; ++number)
+//		printf("%d\n", number);
+//	return 0;
+//}
+
+////[~페이지35 문제2~]
+//int main()
+//{
+//	int number;
+//	int product = 1;
+//	
+//	for (number = 3; number <= 8; number++)
+//	{
+//		product = product * number;
+//	}
+//	printf("%d\n", product);
+//	return 0;
+//}
+
+////[~페이지35 문제3~]
+//int main()
+//{
+//	int number;
+//
+//	for (number = 1; number <= 50; number++)
+//	{
+//		if (number >= 30 && number < 40)
+//			printf("%d\n", number);
+//		else if (number % 10 == 3 || number % 10 == 6 || number % 10 == 9)
+//			printf("%d\n", number);
+//	}
+//	return 0;
+//}
+
+//int main()
+//{
+//	int number;
+//	printf("100 이하의 제곱수를 출력합니다.\n");
+//	
+//	for (number = 1; (number * number) <= 100; number++)
+//	{
+//		printf("%d\n", number * number);
+//	}
+//	return 0;
+//}
+
+//int main()
+//{
+//	int num;
+//	printf("100이하 7의 배수를 출력합니다.\n");
+//
+//	for (num = 7; num <= 100; num += 7)
+//	{
+//		printf("%d\n", num);
+//	}
+//	return 0;
+//}
+
+//[~페이지37 문제4~]
 int main()
 {
-	srand((unsigned int)time(NULL));
-	int command;
-	int day = 0;
-	int study = 0;
-	int exercise = 0;
-	int money = 0;
 
-	do {
-		printf("\n%d번째 날 !\n", ++day);
-		printf("오늘도 뭐할까요?\n");
-		printf("1. 코딩공부한다.\n2. 헬스를 한다.\n3. 저축을 한다.\n");
-		printf("그외. 끝낸다.\n >>");
-		scanf("%d", &command);
-		if (command <1 || command >3) break;
-		else if (command == 1)
-		{
-			int randInt = rand() % 5 + 1;
+}
 
-			switch (randInt) {
-			case 1: printf("기분이 좋네요.\n");
-			case 3: printf("도서관에서. "); break;
-			case 2: printf("기분이 나빠요.\n");
-			case 4: printf("카페에서 "); break;
-			case 5: printf("학원에서 ");
-			}
-			printf("코딩 공부합니다.\n");
-			study++;
-		}
-		else if (command ==2)
-			exercise++;
-		else if (command ==3)
-			money++;
-		printf("%d %d %d", study, exercise, money); //각 행동을 얼마나 많이 반복했는지 보는 확인코드
-	} while (1);
+//[~페이지37 문제5~]
+int main()
+{
 
-	if (day <= 3)
-	{
-		printf("그대로입니다...\n");
-	}
-	else if (study > exercise && study > money) //1. 코딩공부에 대한 엔딩
-	{
-		int level = study / 8;
-		switch (level)
-		{
-		case 0:
-			printf("코딩새싹이 되었습니다.!\n");
-			break;
-		case 1:
-			printf("프로그래머가 되었습니다.!\n");
-			break;
-		default:
-			printf("풀스택 개발자가 되었습니다.!\n");
-			break;
-		}
-	}
-	else if (exercise > study && exercise > money) //2. 헬스를 한 것에 대한 엔딩
-	{
-		int level = exercise / 8;
-		switch (level)
-		{
-		case 0:
-			printf("체중이 조금 감량했습니다.!\n");
-			break;
-		case 1:
-			printf("체중이 많이 감량했습니다.!\n");
-			break;
-		default:
-			printf("바디빌더가 되었습니다.!\n");
-			break;
-		}
-	}
-	else if (money > exercise && money > study) //3. 저축을 한 것에 대한 엔딩
-	{
-		int level = money / 8;
-		switch (level)
-		{
-		case 0:
-			printf("월세를 낼 수 있게 되었습니다.!\n");
-			break;
-		case 1:
-			printf("전세를 낼 수 있게 되었습니다.!\n");
-			break;
-		default:
-			printf("집을 살 수 있게 되었습니다.!\n");
-			break;
-		}
-	}
-	return 0;
 }
