@@ -1260,102 +1260,84 @@
 //	return 0;
 //}
 
-//[교과서 페이지 251 7번 문제]
+////[교과서 페이지 251 7번 문제]
 //int main()
 //{
+//	int input1;
+//	int input2;
+//
+//	printf("시작값 ==> ");
+//	scanf("%d", &input1);
+//	printf("끝값 ==> ");
+//	scanf("%d", &input2);
+//
 //	int numStart;
 //	int numEnd;
 //
-//	printf("시작값 ==> ");
-//	scanf("%d", &numStart);
-//	printf("끝값 ==> ");
-//	scanf("%d", &numEnd);
-//
-//	int oddnumber;
-//	if (numStart < numEnd)
+//	if (input1 < input2)
 //	{
-//		oddnumber = numStart + 1;
-//		while (oddnumber < numEnd)
-//		{
-//			printf("%d ", oddnumber);
-//			oddnumber += 2;
-//		}
-//	}
-//	else if (numEnd < numStart)
-//	{
-//		oddnumber = numEnd + 1;
-//		while (oddnumber < numStart)
-//		{
-//			printf("%d ", oddnumber);
-//			oddnumber += 2;
-//		}
+//		numStart = input1;
+//		numEnd = input2;
 //	}
 //	else
-//	
+//	{
+//		numStart = input2;
+//		numEnd = input1;
+//	}
+//		
+//	while (numStart <= numEnd)
+//	{
+//		if (numStart % 2 == 1)
+//		{
+//			printf("%d\n", numStart);
+//			numStart += 2;
+//		}
+//		else
+//			numStart++;
+//	}
 //	return 0;
 //}
 
-//[교과서 페이지 251 8번 문제]
+////[교과서 페이지 251 8번 문제]
 //int main()
 //{
 //	int input;
-//	printf("숫자를 여러개 입력: ");
+//	printf("숫자를 여러 개 입력: ");
 //	scanf("%d", &input);
 //
-//	int division = 1000;
-//	int dividednumber;
-//	int repeat1000 = 1, repeat100 = 1, repeat10 = 1, repeat1 = 1;
-//	while (input >= 1000)
-//	{
-//		dividednumber = input / division * 2;
-//		while (repeat1000 <= dividednumber)
-//		{
-//			printf("\u2665");
-//			repeat1000++;
-//		}
-//		division = division / 10;
-//		input = input - (dividednumber / 2 * 1000);
-//	}
-//	printf("\n");
-//	
-//	while (input >= 100 && input < 1000)
-//	{
-//		dividednumber = input / division * 2;
-//		while (repeat100 <= dividednumber)
-//		{
-//			printf("\u2665");
-//			repeat100++;
-//		}
-//		division = division / 10;
-//		input = input - (dividednumber / 2 * 100);
-//	}
-//	printf("\n");
+//	int jaritsu_input;
+//	jaritsu_input = input;//이 줄이 핵심포인트!
+//	int jaritsu = 0;
 //
-//	while (input >= 10 && input < 100)
+//	while (jaritsu_input > 0)
 //	{
-//		dividednumber = input / division * 2;
-//		while (repeat10 <= dividednumber)
-//		{
-//			printf("\u2665");
-//			repeat10++;
-//		}
-//		division = division / 10;
-//		input = input - (dividednumber / 2 * 10);
+//		jaritsu_input /= 10;
+//		jaritsu++;
 //	}
-//	printf("\n");
+//	printf("자릿수는 %d 입니다.\n", jaritsu);
 //
-//	while (input >= 1 && input < 10)
+//	int divider_initial = 1;
+//	while (jaritsu > 1)
 //	{
-//		dividednumber = input / division * 2;
-//		while (repeat1 <= dividednumber)
-//		{
-//			printf("\u2665");
-//			repeat1++;
-//		}
-//		division = division / 10;
-//		input = input - (dividednumber / 2 * 1);
+//		divider_initial *= 10;
+//		jaritsu--;
 //	}
 //
+//	int not_remainder;
+//	while (divider_initial > 0)
+//	{
+//		not_remainder = input / divider_initial;
+//		input = input % divider_initial;
+//		divider_initial /= 10;
+//		//printf("%d\n", not_remainder);
+//		//not_remainder *= 2;
+//		while (not_remainder > 0)
+//		{
+//			printf("\u2665\u2665");
+//			not_remainder--;
+//		}
+//		printf("\n");
+//	}
 //	return 0;
 //}
 
@@ -1433,7 +1415,7 @@
 //int main()
 //{
 //	int sheep;
-//	for (sheep = 1; sheep <= 45; sheep++)
+//	for (sheep = 1; sheep <= 50; sheep++)
 //	{
 //		if (sheep % 10 == 0)
 //		{
@@ -1441,6 +1423,8 @@
 //			continue;
 //		}
 //		printf("양 %d마리\n", sheep);
+//		if (sheep == 45)
+//			break;
 //	}
 //	return 0;
 //}
@@ -1532,9 +1516,7 @@
 //
 //	for (number = 1; number <= 50; number++)
 //	{
-//		if (number >= 30 && number < 40)
-//			printf("%d\n", number);
-//		else if (number % 10 == 3 || number % 10 == 6 || number % 10 == 9)
+//		if (number / 10 == 3 || number % 10 == 3 || number % 10 == 6 || number % 10 == 9)
 //			printf("%d\n", number);
 //	}
 //	return 0;
@@ -1617,9 +1599,9 @@
 ////[~페이지37 문제4~]
 //int main()
 //{
-//	int product, multiplier;
+//	int product;
 //
-//	for (multiplier = 1, product = 11 * multiplier; product < 200; multiplier++, product = 11 * multiplier)
+//	for (product = 11; product < 200; product += 11)
 //	{
 //		printf("%d\n", product);
 //	}
@@ -1629,9 +1611,9 @@
 ////[~페이지37 문제5~]
 //int main()
 //{
-//	double sqLine, circum;
+//	double sqLine;
 //
-//	for (sqLine = 0.1, circum = sqLine * 4; circum <= 21; sqLine += 0.1, circum = sqLine * 4)
+//	for (sqLine = 0.1; sqLine * 4 <= 21; sqLine += 0.1)
 //	{
 //		printf("%3.1f\n", sqLine);
 //	}
@@ -1679,5 +1661,75 @@
 //	{
 //		printf("%d반 %d번 \n", myClass, student);
 //	}
+//	return 0;
+//}
+
+//int main()
+//{
+//	int myClass;
+//	int student;
+//	for (myClass = 1; myClass <= 2; myClass++)
+//	{
+//		for (student = 1; student <= 3; student++)
+//		{
+//			printf("%d반 %d번 \n", myClass, student);
+//		}
+//	}
+//	return 0;
+//}
+
+//int main()
+//{
+//	int myClass;
+//	int student;
+//	for (myClass = 1; myClass <= 8; myClass++)
+//	{
+//		for (student = 1; student <= 30; student++)
+//		{
+//			printf("%d반 %d번\n", myClass, student);
+//		}
+//	}
+//	return 0;
+//}
+
+//int main()
+//{
+//	int grade;
+//	int myClass;
+//	int student;
+//	for (grade = 1; grade <= 8; grade++)
+//	{
+//		for (myClass = 1; myClass <= 8; myClass++)
+//		{
+//			for (student = 1; student <= 30; student++)
+//			{
+//				printf("%d학년 %d반 %d번 \n", grade, myClass, student);
+//			}
+//		}
+//	}
+//	return 0;
+//}
+
+
+//[~페이지39 문제1~]
+int main()
+{
+	int product;
+	int number;
+	int multipler;
+	return 0;
+}
+
+////[~페이지39 문제2~]
+//int main()
+//{
+//
+//	return 0;
+//}
+//
+////[~페이지39 문제3~]
+//int main()
+//{
+//
 //	return 0;
 //}
