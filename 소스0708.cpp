@@ -1564,14 +1564,120 @@
 //	return 0;
 //}
 
-//[~페이지37 문제4~]
-int main()
-{
+//int main()
+//{
+//	char input;
+//	for ( ; ; )
+//	{
+//		scanf(" %c", &input);
+//		switch (input)
+//		{
+//		case 's':
+//			printf("START GAME\n");
+//			break;
+//		case 'e':
+//			printf("EXIT GAME\n");
+//			return 0;
+//		}
+//	}
+//	return 0;
+//}
 
-}
+//int main()
+//{
+//	int exitFor, number;
+//	printf("1부터 10까지 곱한 수 출력 : ");
+//	for (number = 10, exitFor = number - 1; exitFor; number *= exitFor, exitFor--)
+//	{
+//	}
+//	printf("%d\n", number);
+//	return 0;
+//}
 
-//[~페이지37 문제5~]
-int main()
-{
+//int main()
+//{
+//	printf("1부터 10까지 곱한 수 출력 : ");
+//	for (int number = 10, int exitFor = number - 1; exitFor; number *= exitFor, exitFor--)
+//	{
+//	}
+//	printf("%d\n", number);
+//	return 0;
+//}
 
-}
+//int main()
+//{
+//	int count;
+//	for (count = 0; count < 5; count++)
+//	{
+//		printf("%d\n", count);
+//	}
+//	return 0;
+//}
+
+////[~페이지37 문제4~]
+//int main()
+//{
+//	int product, multiplier;
+//
+//	for (multiplier = 1, product = 11 * multiplier; product < 200; multiplier++, product = 11 * multiplier)
+//	{
+//		printf("%d\n", product);
+//	}
+//	return 0;
+//}
+
+////[~페이지37 문제5~]
+//int main()
+//{
+//	double sqLine, circum;
+//
+//	for (sqLine = 0.1, circum = sqLine * 4; circum <= 21; sqLine += 0.1, circum = sqLine * 4)
+//	{
+//		printf("%3.1f\n", sqLine);
+//	}
+//	return 0;
+//}
+
+//int main()
+//{
+//	printf("1반 1번\n");
+//	printf("1반 2번\n");
+//	printf("1반 3번\n");
+//	printf("2반 1번\n");
+//	printf("2반 2번\n");
+//	printf("2반 3번\n");
+//
+//	return 0;
+//}
+
+//int main()
+//{
+//	int myClass = 1;
+//	int student = 1;
+//	printf("%d반 %d번\n", myClass, student); student++;
+//	printf("%d반 %d번\n", myClass, student); student++;
+//	printf("%d반 %d번\n", myClass, student); student++;
+//
+//	myClass++; student = 1;
+//	printf("%d반 %d번\n", myClass, student); student++;
+//	printf("%d반 %d번\n", myClass, student); student++;
+//	printf("%d반 %d번\n", myClass, student); student++;
+//	return 0;
+//}
+
+//int main()
+//{
+//	int myClass = 1;
+//	int student;
+//	for (student = 1; student <= 3; student++)
+//	{
+//		printf("%d반 %d번 \n", myClass, student);
+//	}
+//
+//	myClass++;
+//	for (student = 1; student <= 3; student++)
+//	{
+//		printf("%d반 %d번 \n", myClass, student);
+//	}
+//	return 0;
+//}
