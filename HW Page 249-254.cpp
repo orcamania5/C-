@@ -40,36 +40,39 @@
 //답:
 //int main()
 //{
+//	int input1;
+//	int input2;
+//
+//	printf("시작값 ==> ");
+//	scanf("%d", &input1);
+//	printf("끝값 ==> ");
+//	scanf("%d", &input2);
+//
 //	int numStart;
 //	int numEnd;
 //
-//	printf("시작값 ==> ");
-//	scanf("%d", &numStart);
-//	printf("끝값 ==> ");
-//	scanf("%d", &numEnd);
-//
-//	int oddnumber;
-//	if (numStart < numEnd)
+//	if (input1 < input2)
 //	{
-//		oddnumber = numStart + 1;
-//		while (oddnumber < numEnd)
-//		{
-//			printf("%d ", oddnumber);
-//			oddnumber += 2;
-//		}
-//	}
-//	else if (numEnd < numStart)
-//	{
-//		oddnumber = numEnd + 1;
-//		while (oddnumber < numStart)
-//		{
-//			printf("%d ", oddnumber);
-//			oddnumber += 2;
-//		}
+//		numStart = input1;
+//		numEnd = input2;
 //	}
 //	else
-//
-//		return 0;
+//	{
+//		numStart = input2;
+//		numEnd = input1;
+//	}
+//		
+//	while (numStart <= numEnd)
+//	{
+//		if (numStart % 2 == 1)
+//		{
+//			printf("%d\n", numStart);
+//			numStart += 2;
+//		}
+//		else
+//			numStart++;
+//	}
+//	return 0;
 //}
 //
 ////[~문제8~]
@@ -77,63 +80,42 @@
 //int main()
 //{
 //	int input;
-//	printf("숫자를 여러개 입력: ");
+//	printf("숫자를 여러 개 입력: ");
 //	scanf("%d", &input);
 //
-//	int division = 1000;
-//	int dividednumber;
-//	int repeat1000 = 1, repeat100 = 1, repeat10 = 1, repeat1 = 1;
-//	while (input >= 1000)
-//	{
-//		dividednumber = input / division * 2;
-//		while (repeat1000 <= dividednumber)
-//		{
-//			printf("\u2665");
-//			repeat1000++;
-//		}
-//		division = division / 10;
-//		input = input - (dividednumber / 2 * 1000);
-//	}
-//	printf("\n");
+//	int jaritsu_input;
+//	jaritsu_input = input;//이 줄이 핵심포인트!
+//	int jaritsu = 0;
 //
-//	while (input >= 100 && input < 1000)
+//	while (jaritsu_input > 0)
 //	{
-//		dividednumber = input / division * 2;
-//		while (repeat100 <= dividednumber)
-//		{
-//			printf("\u2665");
-//			repeat100++;
-//		}
-//		division = division / 10;
-//		input = input - (dividednumber / 2 * 100);
+//		jaritsu_input /= 10;
+//		jaritsu++;
 //	}
-//	printf("\n");
+//	printf("자릿수는 %d 입니다.\n", jaritsu);
 //
-//	while (input >= 10 && input < 100)
+//	int divider_initial = 1;
+//	while (jaritsu > 1)
 //	{
-//		dividednumber = input / division * 2;
-//		while (repeat10 <= dividednumber)
-//		{
-//			printf("\u2665");
-//			repeat10++;
-//		}
-//		division = division / 10;
-//		input = input - (dividednumber / 2 * 10);
-//	}
-//	printf("\n");
-//
-//	while (input >= 1 && input < 10)
-//	{
-//		dividednumber = input / division * 2;
-//		while (repeat1 <= dividednumber)
-//		{
-//			printf("\u2665");
-//			repeat1++;
-//		}
-//		division = division / 10;
-//		input = input - (dividednumber / 2 * 1);
+//		divider_initial *= 10;
+//		jaritsu--;
 //	}
 //
+//	int not_remainder;
+//	while (divider_initial > 0)
+//	{
+//		not_remainder = input / divider_initial;
+//		input = input % divider_initial;
+//		divider_initial /= 10;
+//		//printf("%d\n", not_remainder);
+//		//not_remainder *= 2;
+//		while (not_remainder > 0)
+//		{
+//			printf("\u2665\u2665");
+//			not_remainder--;
+//		}
+//		printf("\n");
+//	}
 //	return 0;
 //}
 //
