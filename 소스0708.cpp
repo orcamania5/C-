@@ -1721,9 +1721,9 @@
 //	int number;
 //	int multiplier;
 //
-//	for (number = 1; number < 10; number++)
+//	for (number = 2; number <= 9; number++)
 //	{
-//		for (multiplier = 1; multiplier < 10; multiplier++)
+//		for (multiplier = 1; multiplier <= 9; multiplier++)
 //		{
 //			product = number * multiplier;
 //			printf("%d X %d = %d\n", number, multiplier, product);
@@ -1739,13 +1739,13 @@
 //	int number;
 //	int multiplier;
 //
-//	for (number = 1; number < 10; number++)
+//	for (number = 2; number <= 9; number++)
 //	{
 //		if (number == 3)
 //		{
 //			continue;
 //		}
-//		for (multiplier = 1; multiplier < 10; multiplier++)
+//		for (multiplier = 1; multiplier <= 9; multiplier++)
 //		{
 //			product = number * multiplier;
 //			printf("%d * %d = %d\n", number, multiplier, product);
@@ -1963,26 +1963,716 @@
 //}
 ////[~부가 연습 페이지들 (끝)~]
 
-////[~페이지41 문제1~]
+////[~페이지41 문제1(시작)~]
 //int main()
 //{
+//	printf("*");
+//	printf("*");
+//	printf("*");
+//	printf("*");
+//	printf("\n");
+//	printf("*");
+//	printf("*");
+//	printf("*");
+//	printf("\n");
+//	printf("*");
+//	printf("*");
+//	printf("\n");
+//	printf("*");
+//	printf("\n");
 //
 //	return 0;
 //}
 
-//[~페이지41 문제2~]
 //int main()
 //{
+//	for (int x = 1; x <= 4; x++)
+//	{
+//		printf("*");
+//	}
+//	printf("\n");
+//	for (int x = 1; x <= 3; x++)
+//	{
+//		printf("*");
+//	}
+//	printf("\n");
+//	for (int x = 1; x <= 2; x++)
+//	{
+//		printf("*");
+//	}
+//	printf("\n");
+//	for (int x = 1; x <= 1; x++)
+//	{
+//		printf("*");
+//	}
+//	printf("\n");
 //
 //	return 0;
 //}
 
-//[~페이지41 문제3~]
 //int main()
 //{
+//	int outer = 0;
+//	
+//	for (int x = 3; x >= outer; x--)
+//	{
+//		printf("*");
+//	}
+//	printf("\n");
+//	for (int x = 3; x >= 1; x--)
+//	{
+//		printf("*");
+//	}
+//	printf("\n");
+//	for (int x = 3; x >= 2; x--)
+//	{
+//		printf("*");
+//	}
+//	printf("\n");
+//	for (int x = 3; x >= 3; x--)
+//	{
+//		printf("*");
+//	}
+//	printf("\n");
 //
 //	return 0;
 //}
+
+//int main()
+//{
+//	int outer = 0;
+//
+//	for (int x = 3; x >= outer; x--)
+//	{
+//		printf("*");
+//	}
+//	printf("\n");
+//	outer += 1;
+//	for (int x = 3; x >= outer; x--)
+//	{
+//		printf("*");
+//	}
+//	printf("\n");
+//	outer += 1;
+//	for (int x = 3; x >= outer; x--)
+//	{
+//		printf("*");
+//	}
+//	printf("\n");
+//	outer += 1;
+//	for (int x = 3; x >= outer; x--)
+//	{
+//		printf("*");
+//	}
+//	printf("\n");
+//	outer += 1;
+//
+//	return 0;
+//}
+
+//int main()
+//{
+//	int outer = 0;
+//
+//	for (;outer < 4;)
+//	{
+//		for (int x = 3; x >= outer; x--)
+//		{
+//			printf("*");
+//		}
+//		printf("\n");
+//		outer += 1;
+//	}
+//
+//	return 0;
+//}
+
+//int main()
+//{
+//	for (int outer = 0; outer < 4; outer += 1)
+//	{
+//		for (int x = 3; x >= outer; x--)
+//		{
+//			printf("*");
+//		}
+//		printf("\n");
+//	}
+//
+//	return 0;
+//}
+
+//int main()
+//{
+//	int LINE = 4;
+//
+//	for (int outer = 0; outer < LINE; outer += 1)
+//	{
+//		for (int x = 3; x >= outer; x--)
+//		{
+//			printf("*");
+//		}
+//		printf("\n");
+//	}
+//
+//	return 0;
+//}
+
+//int main()
+//{
+//	int LINE = 4;
+//	scanf("%d", &LINE);
+//
+//	for (int outer = 0; outer < LINE; outer += 1)
+//	{
+//		for (int x = LINE - 1; x >= outer; x--)
+//		{
+//			printf("*");
+//		}
+//		printf("\n");
+//	}
+//
+//	return 0;
+//}
+////[~페이지41 문제1(끝)~]
+
+////[~페이지41 문제2(시작)~]
+//int main()
+//{
+//	printf(" ");
+//	printf(" ");
+//	printf(" ");
+//	printf("*");
+//	printf(" ");
+//	printf(" ");
+//	printf(" ");
+//	printf("\n");
+//
+//	printf(" ");
+//	printf(" ");
+//	printf("*");
+//	printf("*");
+//	printf("*");
+//	printf(" ");
+//	printf(" ");
+//	printf("\n");
+//
+//	printf(" ");
+//	printf("*");
+//	printf("*");
+//	printf("*");
+//	printf("*");
+//	printf("*");
+//	printf(" ");
+//	printf("\n");
+//
+//	printf("*");
+//	printf("*");
+//	printf("*");
+//	printf("*");
+//	printf("*");
+//	printf("*");
+//	printf("*");
+//	printf("\n");
+//
+//	return 0;
+//}
+
+//int main()
+//{
+//	for (int w = 1 ; w <= 3; w++)
+//	{
+//		printf(" ");
+//	}
+//	for (int x = 1; x <= 1; x++)
+//	{
+//		printf("*");
+//	}
+//	for (int w = 1 ; w <= 3; w++)
+//	{
+//		printf(" ");
+//	}
+//	printf("\n");
+//
+//	for (int w = 1; w <= 2; w++)
+//	{
+//		printf(" ");
+//	}
+//	for (int x = 1; x <= 3; x++)
+//	{
+//		printf("*");
+//	}
+//	for (int w = 1; w <= 2; w++)
+//	{
+//		printf(" ");
+//	}
+//	printf("\n");
+//
+//	for (int w = 1; w <= 1; w++)
+//	{
+//		printf(" ");
+//	}
+//	for (int x = 1; x <= 5; x++)
+//	{
+//		printf("*");
+//	}
+//	for (int w = 1; w <= 1; w++)
+//	{
+//		printf(" ");
+//	}
+//	printf("\n");
+//
+//	for (int x = 1; x <= 7; x++)
+//	{
+//		printf("*");
+//	}
+//	printf("\n");
+//
+//	return 0;
+//}
+
+//int main()
+//{
+//	int outer = 3;
+//	int inner = 1;
+//
+//	for (int w = 1; w <= outer; w++)
+//	{
+//		printf(" ");
+//	}
+//	for (int x = 1; x <= inner; x++)
+//	{
+//		printf("*");
+//	}
+//	for (int w = 1; w <= outer; w++)
+//	{
+//		printf(" ");
+//	}
+//	printf("\n");
+//
+//	for (int w = 1; w <= 2; w++)
+//	{
+//		printf(" ");
+//	}
+//	for (int x = 1; x <= 3; x++)
+//	{
+//		printf("*");
+//	}
+//	for (int w = 1; w <= 2; w++)
+//	{
+//		printf(" ");
+//	}
+//	printf("\n");
+//
+//	for (int w = 1; w <= 1; w++)
+//	{
+//		printf(" ");
+//	}
+//	for (int x = 1; x <= 5; x++)
+//	{
+//		printf("*");
+//	}
+//	for (int w = 1; w <= 1; w++)
+//	{
+//		printf(" ");
+//	}
+//	printf("\n");
+//
+//	for (int x = 1; x <= 7; x++)
+//	{
+//		printf("*");
+//	}
+//	printf("\n");
+//
+//	return 0;
+//}
+
+//int main()
+//{
+//	int outer = 1;
+//	int inner = 1;
+//
+//	for (int w = 3; w >= outer; w--)
+//	{
+//		printf(" ");
+//	}
+//	for (int x = 1; x <= inner; x++)
+//	{
+//		printf("*");
+//	}
+//	printf("\n");
+//	outer += 1;
+//	inner += 2;
+//
+//	for (int w = 3; w >= outer; w--)
+//	{
+//		printf(" ");
+//	}
+//	for (int x = 1; x <= inner; x++)
+//	{
+//		printf("*");
+//	}
+//	printf("\n");
+//	outer += 1;
+//	inner += 2;
+//
+//	for (int w = 3; w >= outer; w--)
+//	{
+//		printf(" ");
+//	}
+//	for (int x = 1; x <= inner; x++)
+//	{
+//		printf("*");
+//	}
+//	printf("\n");
+//	outer += 1;
+//	inner += 2;
+//
+//	for (int x = 1; x <= inner; x++)
+//	{
+//		printf("*");
+//	}
+//	printf("\n");
+//	outer += 1;
+//	inner += 2;
+//
+//	return 0;
+//}
+
+//int main()
+//{
+//	int outer = 1;
+//	int inner = 1;
+//
+//	for (;outer <= 4;)
+//	{
+//		for (int w = 3; w >= outer; w--)
+//		{
+//			printf(" ");
+//		}
+//		for (int x = 1; x <= inner; x++)
+//		{
+//			printf("*");
+//		}
+//		printf("\n");
+//		outer += 1;
+//		inner += 2;
+//	}
+//	
+//	return 0;
+//}
+
+//int main()
+//{
+//	int inner = 1;
+//
+//	for (int outer = 1; outer <= 4; outer += 1)
+//	{
+//		for (int w = 3; w >= outer; w--)
+//		{
+//			printf(" ");
+//		}
+//		for (int x = 1; x <= inner; x++)
+//		{
+//			printf("*");
+//		}
+//		printf("\n");
+//		inner += 2;
+//	}
+//
+//	return 0;
+//}
+
+//int main()
+//{
+//	int LINE = 4;
+//	int inner = 1;
+//
+//	for (int outer = 1; outer <= 4; outer += 1)
+//	{
+//		for (int w = 3; w >= outer; w--)
+//		{
+//			printf(" ");
+//		}
+//		for (int x = 1; x <= inner; x++)
+//		{
+//			printf("*");
+//		}
+//		printf("\n");
+//		inner += 2;
+//	}
+//
+//	return 0;
+//}
+
+//int main()
+//{
+//	int LINE = 4;
+//	scanf("%d", &LINE);
+//	int inner = 1;
+//
+//	for (int outer = 1; outer <= LINE; outer += 1)
+//	{
+//		for (int w = LINE - 1; w >= outer; w--)
+//		{
+//			printf(" ");
+//		}
+//		for (int x = 1; x <= inner; x++)
+//		{
+//			printf("*");
+//		}
+//		printf("\n");
+//		inner += 2;
+//	}
+//
+//	return 0;
+//}
+////[~페이지41 문제2(끝)~]
+
+////[~페이지41 문제3(시작)~]
+//int main()
+//{
+//	printf(" ");
+//	printf(" ");
+//	printf("*");
+//	printf(" ");
+//	printf(" ");
+//	printf("\n");
+//
+//	printf(" ");
+//	printf("*");
+//	printf("*");
+//	printf("*");
+//	printf(" ");
+//	printf("\n");
+//
+//	printf("*");
+//	printf("*");
+//	printf("*");
+//	printf("*");
+//	printf("*");
+//	printf("\n");
+//
+//	printf("*");
+//	printf("*");
+//	printf("*");
+//	printf("*");
+//	printf("*");
+//	printf("\n");
+//
+//	printf(" ");
+//	printf("*");
+//	printf("*");
+//	printf("*");
+//	printf(" ");
+//	printf("\n");
+//
+//	printf(" ");
+//	printf(" ");
+//	printf("*");
+//	printf(" ");
+//	printf(" ");
+//	printf("\n");
+//
+//	return 0;
+//}
+
+//int main()
+//{
+//	for (int w = 1 ; w <= 2; w++)
+//	{
+//		printf(" ");
+//	}
+//	for (int x = 1; x <= 1; x++)
+//	{
+//		printf("*");
+//	}
+//	printf("\n");
+//
+//	for (int w = 1; w <= 1; w++)
+//	{
+//		printf(" ");
+//	}
+//	for (int x = 1; x <= 3; x++)
+//	{
+//		printf("*");
+//	}
+//	printf("\n");
+//
+//	for (int x = 1; x <= 5; x++)
+//	{
+//		printf("*");
+//	}
+//	printf("\n");
+//
+//	for (int x = 1; x <= 5; x++)
+//	{
+//		printf("*");
+//	}
+//	printf("\n");
+//
+//	for (int w = 1; w <= 1; w++)
+//	{
+//		printf(" ");
+//	}
+//	for (int x = 1; x <= 3; x++)
+//	{
+//		printf("*");
+//	}
+//	printf("\n");
+//
+//	for (int w = 1; w <= 2; w++)
+//	{
+//		printf(" ");
+//	}
+//	for (int x = 1; x <= 1; x++)
+//	{
+//		printf("*");
+//	}
+//	printf("\n");
+//
+//	return 0;
+//}
+
+//int main()
+//{
+//	int outer = 2;
+//	int inner = 1;
+//	
+//	for (int w = 1 ; w <= outer; w++)
+//	{
+//		printf(" ");
+//	}
+//	for (int x = 1; x <= inner; x++)
+//	{
+//		printf("*");
+//	}
+//	printf("\n");
+//
+//	for (int w = 1; w <= 1; w++)
+//	{
+//		printf(" ");
+//	}
+//	for (int x = 1; x <= 3; x++)
+//	{
+//		printf("*");
+//	}
+//	printf("\n");
+//
+//	for (int x = 1; x <= 5; x++)
+//	{
+//		printf("*");
+//	}
+//	printf("\n");
+//
+//	for (int x = 1; x <= 5; x++)
+//	{
+//		printf("*");
+//	}
+//	printf("\n");
+//
+//	for (int w = 1; w <= 1; w++)
+//	{
+//		printf(" ");
+//	}
+//	for (int x = 1; x <= 3; x++)
+//	{
+//		printf("*");
+//	}
+//	printf("\n");
+//
+//	for (int w = 1; w <= 2; w++)
+//	{
+//		printf(" ");
+//	}
+//	for (int x = 1; x <= 1; x++)
+//	{
+//		printf("*");
+//	}
+//	printf("\n");
+//
+//	return 0;
+//}
+
+//int main()
+//{
+//	int outer = 2;
+//	int inner = 1;
+//
+//	for (int w = 1; w <= outer; w++)
+//	{
+//		printf(" ");
+//	}
+//	for (int x = 1; x <= inner; x++)
+//	{
+//		printf("*");
+//	}
+//	printf("\n");
+//	outer -= 1;
+//	inner += 2;
+//
+//	for (int w = 1; w <= outer; w++)
+//	{
+//		printf(" ");
+//	}
+//	for (int x = 1; x <= inner; x++)
+//	{
+//		printf("*");
+//	}
+//	printf("\n");
+//	outer -= 1;
+//	inner += 2;
+//
+//	for (int x = 1; x <= inner; x++)
+//	{
+//		printf("*");
+//	}
+//	printf("\n");
+//	outer -= 1;
+//	inner += 2;
+//	///////////////////////////////
+//
+//	outer += 1;
+//	inner -= 2;
+//	for (int x = 1; x <= inner; x++)
+//	{
+//		printf("*");
+//	}
+//	printf("\n");
+//
+//	outer += 1;
+//	inner -= 2;
+//	for (int w = 1; w <= outer; w++)
+//	{
+//		printf(" ");
+//	}
+//	for (int x = 1; x <= inner; x++)
+//	{
+//		printf("*");
+//	}
+//	printf("\n");
+//
+//	outer += 1;
+//	inner -= 2;
+//	for (int w = 1; w <= outer; w++)
+//	{
+//		printf(" ");
+//	}
+//	for (int x = 1; x <= inner; x++)
+//	{
+//		printf("*");
+//	}
+//	printf("\n");
+//
+//	return 0;
+//}
+
+int main()
+{
+	int outer = 2;
+	int inner = 1;
+
+	for (;outer)
+}
 
 //[~페이지41 문제4~]
 //int main()
