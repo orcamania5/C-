@@ -2387,7 +2387,7 @@
 //	int LINE = 4;
 //	int inner = 1;
 //
-//	for (int outer = 1; outer <= 4; outer += 1)
+//	for (int outer = 1; outer <= LINE; outer += 1)
 //	{
 //		for (int w = 3; w >= outer; w--)
 //		{
@@ -2666,13 +2666,118 @@
 //	return 0;
 //}
 
-int main()
-{
-	int outer = 2;
-	int inner = 1;
+//int main()
+//{
+//	int outer = 2;
+//	int inner = 1;
+//
+//	for (; outer >= 0;)
+//	{
+//		for (int w = 1; w <= outer; w++)
+//		{
+//			printf(" ");
+//		}
+//		for (int x = 1; x <= inner; x++)
+//		{
+//			printf("*");
+//		}
+//		printf("\n");
+//		outer -= 1;
+//		inner += 2;
+//	}
+//
+//	///////////////////////////////
+//	for (; outer <= 3;)
+//	{
+//		outer += 1;
+//		inner -= 2;
+//		for (int w = 1; w <= outer; w++)
+//		{
+//			printf(" ");
+//		}
+//		for (int x = 1; x <= inner; x++)
+//		{
+//			printf("*");
+//		}
+//		printf("\n");
+//	}
+//
+//	return 0;
+//}
 
-	for (;outer)
-}
+//int main()
+//{
+//	int inner = 1;
+//
+//	for (int outer = 2; outer >= 0; outer -= 1)
+//	{
+//		for (int w = 1; w <= outer; w++)
+//		{
+//			printf(" ");
+//		}
+//		for (int x = 1; x <= inner; x++)
+//		{
+//			printf("*");
+//		}
+//		printf("\n");
+//		inner += 2;
+//	}
+//
+//	///////////////////////////////
+//	for (int outer = 0; outer <= 3; outer += 1)
+//	{
+//		inner -= 2;
+//		for (int w = 1; w <= outer; w++)
+//		{
+//			printf(" ");
+//		}
+//		for (int x = 1; x <= inner; x++)
+//		{
+//			printf("*");
+//		}
+//		printf("\n");
+//	}
+//
+//	return 0;
+//}
+
+//int main()
+//{
+//	int LINE = 3;
+//	scanf("%d", &LINE);
+//	int inner = 1;
+//
+//	for (int outer = LINE-1; outer >= 0; outer -= 1)
+//	{
+//		for (int w = 1; w <= outer; w++)
+//		{
+//			printf(" ");
+//		}
+//		for (int x = 1; x <= inner; x++)
+//		{
+//			printf("*");
+//		}
+//		printf("\n");
+//		inner += 2;
+//	}
+//
+//	///////////////////////////////
+//	for (int outer = 0; outer <= LINE - 1; outer += 1)
+//	{
+//		inner -= 2;
+//		for (int w = 1; w <= outer; w++)
+//		{
+//			printf(" ");
+//		}
+//		for (int x = 1; x <= inner; x++)
+//		{
+//			printf("*");
+//		}
+//		printf("\n");
+//	}
+//
+//	return 0;
+//}
 
 //[~페이지41 문제4~]
 //int main()
