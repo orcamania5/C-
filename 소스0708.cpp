@@ -2779,20 +2779,219 @@
 //	return 0;
 //}
 
-//[~페이지41 문제4~]
+////[~페이지41 문제4(시작)~]
 //int main()
 //{
+//	printf(" ");
+//	printf(" ");
+//	printf(" ");
+//	printf("1");
+//	printf("\n");
+//
+//	printf(" ");
+//	printf(" ");
+//	printf("2");
+//	printf("2");
+//	printf("\n");
+//
+//	printf(" ");
+//	printf("3");
+//	printf("3");
+//	printf("3");
+//	printf("\n");
+//
+//	printf("4");
+//	printf("4");
+//	printf("4");
+//	printf("4");
+//	printf("\n");
 //
 //	return 0;
 //}
 
-//[~페이지41 문제5~]
 //int main()
 //{
+//	for (int w = 1 ; w <= 3; w++)
+//	{
+//		printf(" ");
+//	}
+//	for (int x = 1; x <= 1; x++)
+//	{
+//		printf("1");
+//	}
+//	printf("\n");
+//
+//	for (int w = 1; w <= 2; w++)
+//	{
+//		printf(" ");
+//	}
+//	for (int x = 1; x <= 2; x++)
+//	{
+//		printf("2");
+//	}
+//	printf("\n");
+//
+//	for (int w = 1; w <= 1; w++)
+//	{
+//		printf(" ");
+//	}
+//	for (int x = 1; x <= 3; x++)
+//	{
+//		printf("3");
+//	}
+//	printf("\n");
+//
+//	for (int x = 1; x <= 4; x++)
+//	{
+//		printf("4");
+//	}
+//	printf("\n");
 //
 //	return 0;
 //}
 
+//int main()
+//{
+//	int outer = 3;
+//	int inner = 1;
+//
+//	for (int w = 1 ; w <= outer; w++)
+//	{
+//		printf(" ");
+//	}
+//	for (int x = 1; x <= inner; x++)
+//	{
+//		printf("1");
+//	}
+//	printf("\n");
+//	outer--;
+//	inner++;
+//
+//	for (int w = 1; w <= 2; w++)
+//	{
+//		printf(" ");
+//	}
+//	for (int x = 1; x <= 2; x++)
+//	{
+//		printf("2");
+//	}
+//	printf("\n");
+//	outer--;
+//	inner++;
+//
+//	for (int w = 1; w <= 1; w++)
+//	{
+//		printf(" ");
+//	}
+//	for (int x = 1; x <= 3; x++)
+//	{
+//		printf("3");
+//	}
+//	printf("\n");
+//	outer--;
+//	inner++;
+//
+//	for (int x = 1; x <= 4; x++)
+//	{
+//		printf("4");
+//	}
+//	printf("\n");
+//	outer--;
+//	inner++;
+//
+//	return 0;
+//}
+
+//int main()
+//{
+//	int inner = 1;
+//	int print_number = 1;
+//
+//	for (int outer = 3; outer>=0 ; outer--)
+//	{
+//		for (int w = 1; w <= outer; w++)
+//		{
+//			printf(" ");
+//		}
+//		for (int x = 1; x <= inner; x++)
+//		{
+//			printf("%d", print_number);
+//		}
+//		printf("\n");
+//		inner++;
+//		print_number++;
+//	}
+//
+//	return 0;
+//}
+
+//int main()
+//{
+//	int LINE = 4;
+//	int inner = 1;
+//	int print_number = 1;
+//
+//	scanf("%d", &LINE);
+//
+//	for (int outer = LINE -1; outer >= 0; outer--)
+//	{
+//		for (int w = 1; w <= outer; w++)
+//		{
+//			printf(" ");
+//		}
+//		for (int x = 1; x <= inner; x++)
+//		{
+//			printf("%d", print_number);
+//		}
+//		printf("\n");
+//		inner++;
+//		print_number++;
+//	}
+//
+//	return 0;
+//}
+////[~페이지41 문제4(끝)~]
+
+////[~페이지41 문제5(시작)~]
+//int main()
+//{
+//	int total = 0, inputA;
+//	char winner=0;
+//
+//	for (;;)
+//	{
+//		for (int repeat_say = 1; repeat_say <= 3 ; )
+//		{
+//			printf("%c: ", 'A' + winner);
+//			scanf("%d", &inputA) == 1;
+//			if (inputA >= 1 && inputA <= 3)
+//			{
+//				total += inputA;
+//				repeat_say++;
+//				continue;
+//			}
+//			else if (inputA == 0)
+//			{
+//				break;
+//			}
+//			else
+//			{
+//				printf("다시 입력해주세요.\n");
+//				continue;
+//			}
+//		}
+//
+//		printf("=> %d\n", total);
+//		
+//		winner = ++winner%2;
+//		if (total >= 31)
+//		{
+//			break;
+//		}
+//	}
+//	printf("%c가 이겼습니다!\n", 'A'+winner);
+//	return 0;
+//}
 
 //int main()
 //{
@@ -2816,3 +3015,114 @@
 //
 //	printf("\n");
 //}
+
+//int main()
+//{
+//	float conversion = 0;
+//	while (conversion < 2)
+//	{
+//		printf("%.1f\n", conversion);
+//		conversion = conversion + 0.1;
+//	}
+//	return 0;
+//}
+
+////[~페이지42 문제1~]
+//int main()
+//{
+//	for (float conversion = 0; conversion < 2; conversion += 0.1)
+//	{
+//		printf("%.1f\n", conversion);
+//	}
+//	return 0;
+//}
+
+//int main()
+//{
+//	for (double conversion = 90; conversion > 0.1; conversion /= 3)
+//	{
+//		if (conversion == 10.0)
+//		{
+//			continue;
+//		}
+//		printf("%.31f\n", conversion);
+//	}
+//	return 0;
+//}
+
+////[~페이지42 문제1~] (for -> while 로 바꿀때 continue; 를 써버리면 for는 3번째 증가식이 있어서 계속 반복하지만 while 은 증가식이 없어서 continue; 해버리면 무한 루프가 그냥 끝나게 됨. continue; 를 주의해야하는 문제)
+//int main()
+//{
+//	double conversion = 90;
+//
+//	while (conversion > 0.1)
+//	{
+//		if (conversion == 10.0)
+//		{
+//			conversion /= 3;
+//		}
+//		else
+//		{
+//			printf("%.31f\n", conversion);
+//			conversion /= 3;
+//		}
+//	}
+//	return 0;
+//}
+
+//int main()
+//{
+//	int number;
+//	while (1)
+//	{
+//		scanf("%d", &number);
+//		if (number == 0)
+//		{
+//			printf("프로그램 종료\n");
+//			break;
+//		}
+//	}
+//	return 0;
+//}
+
+////[~페이지42 문제1~]
+//int main()
+//{
+//	for (int number;;)
+//	{
+//		scanf("%d", &number);
+//		if (number == 0)
+//		{
+//			printf("프로그램 종료\n");
+//			break;
+//		}
+//	}
+//	return 0;
+//}
+
+int main()
+{
+	int for_flag = 1;
+	int number = 0;
+	while (for_flag)
+	{
+		printf("number = %d\n", number);
+		while (number++)
+		{
+			printf(" >number = %d\n", number);
+			if (number == 3)
+			{
+				for_flag = 0;
+				break;
+			}
+		}
+		number++;
+		printf(">>number = %d\n", number);
+	}
+	printf("%d %d\n", for_flag, number);
+	return 0;
+}
+
+////[~페이지43 문제2~]
+////[1]while(for_flag) --> [2]while(for_flag) --> [3]while(number++) --> [4]while(for_flag) --> [5]끝
+////[1]for_flag = 1, number = 0 --> 2 | [2]for_flag = 1, number = 2 | [3]for_flag = 0, number = 3 | [4]for_flag = 0, number = 4
