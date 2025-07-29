@@ -1,3 +1,4 @@
+////[코드 라인 2~3177까지 C언어 기초책 내용]
 //#include<stdio.h>
 //
 //int main()
@@ -1139,12 +1140,12 @@
 //}
 
 ////[Starting Codes]
-#define _CRT_SECURE_NO_WARNINGS
-#include<stdio.h>
-#include<stdlib.h>
-#include<time.h>
-#include<string.h>
-#include<math.h>
+//#define _CRT_SECURE_NO_WARNINGS
+//#include<stdio.h>
+//#include<stdlib.h>
+//#include<time.h>
+//#include<string.h>
+//#include<math.h>
 
 //[~페이지32 문제2~]
 //int main()
@@ -3060,12 +3061,10 @@
 //		if (conversion == 10.0)
 //		{
 //			conversion /= 3;
+//			continue;
 //		}
-//		else
-//		{
-//			printf("%.31f\n", conversion);
-//			conversion /= 3;
-//		}
+//		printf("%.31f\n", conversion);
+//		conversion /= 3;
 //	}
 //	return 0;
 //}
@@ -3100,29 +3099,140 @@
 //	return 0;
 //}
 
-int main()
-{
-	int for_flag = 1;
-	int number = 0;
-	while (for_flag)
-	{
-		printf("number = %d\n", number);
-		while (number++)
-		{
-			printf(" >number = %d\n", number);
-			if (number == 3)
-			{
-				for_flag = 0;
-				break;
-			}
-		}
-		number++;
-		printf(">>number = %d\n", number);
-	}
-	printf("%d %d\n", for_flag, number);
-	return 0;
-}
+//int main()
+//{
+//	int for_flag = 1;
+//	int number = 0;
+//	while (for_flag)
+//	{
+//		printf("number = %d\n", number);
+//		while (number++)
+//		{
+//			printf(" >number = %d\n", number);
+//			if (number == 3)
+//			{
+//				for_flag = 0;
+//				break;
+//			}
+//		}
+//		number++;
+//		printf(">>number = %d\n", number);
+//	}
+//	printf("%d %d\n", for_flag, number);
+//	return 0;
+//}
 
 ////[~페이지43 문제2~]
-////[1]while(for_flag) --> [2]while(for_flag) --> [3]while(number++) --> [4]while(for_flag) --> [5]끝
-////[1]for_flag = 1, number = 0 --> 2 | [2]for_flag = 1, number = 2 | [3]for_flag = 0, number = 3 | [4]for_flag = 0, number = 4
+////[1]while(for_flag) --> [2]while(for_flag) 계속 --> [3]while(number++) --> [4]while(for_flag) --> [5]끝
+////[1]for_flag = 1, number = 0 | [2]for_flag = 1, number = 2 | [3]for_flag = 0, number = 3 | [4]for_flag = 0, number = 4
+
+////[~페이지43 문제3~]
+//int main()
+//{
+//	int for_flag = 1;
+//	int number = 1;//값을 1로 바꿈
+//	while (for_flag)
+//	{
+//		printf("number = %d\n", number);
+//		while (number++)
+//		{
+//			printf(" >number = %d\n", number);
+//			if (number == 3)
+//			{
+//				for_flag = 0;
+//				break;
+//			}
+//		}
+//		number++;
+//		printf(">>number = %d\n", number);
+//	}
+//	printf("%d %d\n", for_flag, number);
+//	return 0;
+//}
+////[1]while(for_flag) --> [2]while(number++) --> [3]while(number++) --> [4]while(for_flag) 계속 --> [5]끝
+////[1]for_flag = 1, number = 1 | [2]for_flag = 1, number = 2 | [3]for_flag = 1, number = 3 | [4]for_flag = 0, number = 4
+
+////[~페이지43 문제4 & 5~]
+//int main()
+//{
+//	int for_flag = 1;
+//	int number = 0;
+//	for ( ; for_flag ; )
+//	{
+//		printf("number = %d\n", number);
+//		for (;number++;)
+//		{
+//			printf(" >number = %d\n", number);
+//			if (number == 3)
+//			{
+//				for_flag = 0;
+//				break;
+//			}
+//		}
+//		number++;
+//		printf(">>number = %d\n", number);
+//	}
+//	printf("%d %d\n", for_flag, number);
+//	return 0;
+//}
+
+////[코드 라인 3179~????까지 C언어 심화책 내용]
+////[Starting Codes]
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+#include<stdlib.h>
+#include<time.h>
+#include<string.h>
+#include<math.h>
+
+//int suyel(int n)
+//{
+//	int sum = 0;
+//	for (int x = 0; x <= n; x++)
+//	{
+//		sum += x;
+//	}
+//	return sum;
+//}
+//int main()
+//{
+//	int result = suyel(10);
+//	printf("%d\n", result);
+//
+//	return 0;
+//}
+
+//void function_test1()
+//{
+//	printf("function_test1()");
+//	printf("함수안에서 실행\n");
+//}
+//int main()
+//{
+//	printf("실행전\n");
+//	function_test1();
+//	printf("실행후\n");
+//	return 0;
+//}
+
+//void eatFood()
+//{
+//	printf("밥먹기\n");
+//}
+//void goSleep()
+//{
+//	printf("잠자기\n");
+//}
+//int main()
+//{
+//	eatFood(); goSleep();
+//	eatFood(); eatFood();
+//	goSleep(); goSleep();
+//
+//	return 0;
+//}
+
+void person_A()
+{
+	int money = 10000;
+}
