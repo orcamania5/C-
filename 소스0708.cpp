@@ -3621,3 +3621,664 @@
 //	printf("스코프유무: %s\n", M416.scope ? "true":"false");
 //	return 0;
 //}
+
+//struct __dummy__
+//{
+//	int data_0;
+//	char data_1;
+//	float data_2;
+//};
+//struct VIP_PERSON
+//{
+//	char grade;
+//	char personCode;
+//	char mileage;
+//};
+//
+//int main()
+//{
+//	int sizedummy = sizeof(__dummy__);
+//	int sizevip = sizeof(VIP_PERSON);
+//	printf("더미 크기: %d\n", sizedummy);
+//	printf("vip정보 크기: %d\n", sizevip);
+//	
+//	VIP_PERSON lee_sam;
+//	printf("고객 등급을 입력하세요\n");
+//	while (true)
+//	{
+//		scanf("%c", &lee_sam.grade);
+//		if (lee_sam.grade == 'S' || 'A' <= lee_sam.grade && lee_sam.grade <= 'D')
+//			break;
+//	}
+//	int tmp;
+//	printf("고객 코드를 입력하세요\n");
+//	scanf("%d", &tmp);
+//	lee_sam.personCode = (char)tmp;
+//	printf("마일리지를 입력하세요\n");
+//	scanf("%d", &tmp);
+//	lee_sam.mileage = (char)tmp;
+//	printf("%c %d %d\n", lee_sam.grade, lee_sam.personCode, lee_sam.mileage);
+//	return 0;
+//}
+
+////[~페이지15 문제1~]
+//struct eightbytesample1
+//{
+//	char a;
+//	char b;
+//	char c;
+//	char d;
+//	char e;
+//	char f;
+//	char g;
+//	char h;
+//};
+//struct eightbytesample2
+//{
+//	double number;
+//};
+//
+//int main()
+//{
+//	printf("첫번째 방법 크기 : % d\n", sizeof(eightbytesample1));
+//	printf("두번째 방법 크기 : % d\n", sizeof(eightbytesample2));
+//
+//	return 0;
+//}
+
+////[~페이지15 문제2~]
+//struct __dummy__
+//{
+//	int data_0;
+//	char data_1;
+//	float data_2;
+//};
+//
+//int main()
+//{
+//	__dummy__ sample; //컴파일하면 에러가 발생하는 이유: __dummy__가 구조체(struct)의 이름일 뿐, 실제 구조체 변수가 선언되지 않았기 때문
+//	// 위의 코드는 구조체의 변수를 선언하는 코드라인이다.
+//	int tmp;
+//	printf("첫번째 데이더의 값: ");
+//	scanf("%d", &sample.data_0);
+//	printf("두번째 데이더의 값: ");
+//	scanf("%d", &tmp);
+//	sample.data_1 = (char)tmp;
+//	printf("세번째 데이더의 값: ");
+//	scanf("%d", &tmp);
+//	sample.data_2 = (float)tmp;
+//	printf("%d %c %f\n", sample.data_0, sample.data_1, sample.data_2);
+//
+//	return 0;
+//}
+
+//void main()
+//{
+//	short pt1;
+//	scanf("%hd", &pt1);
+//	printf("값 : %hd\n", pt1);
+//}
+
+//short getDefaultData()
+//{
+//	short pt1;
+//	scanf("%hd", &pt1);
+//	return pt1;
+//}
+//void main()
+//{
+//	short pt;
+//	pt = getDefaultData();
+//	printf("값 : %hd\n", pt);
+//}
+
+//short getDefaultData();
+//void printData(short pt2);
+//
+//void main()
+//{
+//	short pt;
+//	pt = getDefaultData();
+//	printData(pt);
+//
+//}
+//short getDefaultData()
+//{
+//	short pt1;
+//	scanf("%hd", &pt1);
+//	return pt1;
+//}
+//void printData(short pt2)
+//{
+//	printf("값 : %hd\n", pt2);
+//}
+
+////[~페이지16 문제2-1)~]
+//short getDefaultData();
+//void printData(short pt2);
+//
+//void main()
+//{
+//	short pt;
+//	pt = getDefaultData();
+//	printData(pt);
+//
+//}
+//short getDefaultData()
+//{
+//	short pt1;
+//	scanf("%hd", &pt1);
+//	return pt1;
+//}
+//void printData(short pt2)
+//{
+//	printf("값 : %hd\n", pt2);
+//	printf("값 : %hd\n", pt2+5);
+//}
+
+////[~페이지16 문제2-2)~]
+//short getDefaultData();
+//void printData(short pt2);
+//void printDataAdd5(short pt3);
+//
+//void main()
+//{
+//	short pt;
+//	pt = getDefaultData();
+//	printData(pt);
+//	printDataAdd5(pt);
+//}
+//short getDefaultData()
+//{
+//	short pt1;
+//	scanf("%hd", &pt1);
+//	return pt1;
+//}
+//void printData(short pt2)
+//{
+//	printf("값 : %hd\n", pt2);
+//}
+//void printDataAdd5(short pt3)
+//{
+//	pt3 += 5;
+//	printf("값 : %hd\n", pt3);
+//}
+
+////[~페이지16 문제2-3)~] //문제풀기
+//short getDefaultData();
+//void printData(short pt2);
+//void printDataAdd5(short pt3);
+//
+//void main()
+//{
+//	short pt;
+//	pt = getDefaultData();
+//	printData(pt);
+//	printDataAdd5(pt);
+//}
+//short getDefaultData()
+//{
+//	short pt1;
+//	scanf("%hd", &pt1);
+//	return pt1;
+//}
+//void printData(short pt2)
+//{
+//	printf("값 : %hd\n", pt2);
+//}
+//void printDataAdd5(short pt3)
+//{
+//	pt3 += 5;
+//	printf("값 : %hd\n", pt3);
+//}
+
+//void main()
+//{
+//	char arr[4];
+//	printf("%d\n", sizeof(arr));
+//}
+
+//void main()
+//{
+//	int arr[4];
+//	printf("%d\n", sizeof(arr));
+//}
+
+//void main()
+//{
+//	char alpah[4] = { 'a','b', 'c', 'd' };
+//	printf("%c%c%c%c%c\n", alpah[0], alpah[1], alpah[2], alpah[3]);
+//}
+
+//void main()
+//{
+//	int num[3] = { 3,6,9 };
+//	printf("num의 안에 들어있는");
+//	printf("1 번째 숫자는? %d\n", num[1]);
+//}
+
+//int main()
+//{
+//	int num[3] = { 3,6,9 };
+//	printf("%d번째에 %d 저장\n", 0, num[0]);
+//	printf("%d번째에 %d 저장\n", 1, num[1]);
+//	printf("%d번째에 %d 저장\n", 2, num[2]);
+//	return 0;
+//}
+
+//int main()
+//{
+//	int num[3] = { 3,6,9 };
+//	int k = 0;
+//	printf("%d번째에 %d 저장\n", k, num[k]); k++;
+//	printf("%d번째에 %d 저장\n", k, num[k]); k++;
+//	printf("%d번째에 %d 저장\n", k, num[k]); k++;
+//	return 0;
+//}
+
+//int main()
+//{
+//	int num[3] = { 3,6,9 };
+//	for (int k = 0; k < 3; k++)
+//	{
+//		printf("%d번째에 %d 저장\n", k, num[k]);
+//	}
+//	return 0;
+//}
+
+//int main()
+//{
+//	int arr[3];
+//	for (int i = 0; i < 3; i++)
+//	{
+//		scanf("%d", &arr[i]);
+//		printf("%d\n", arr[i]);
+//	}
+//	return 0;
+//}
+
+////[~페이지18 문제1~]
+//int main()
+//{
+//	int arr[5];
+//	for (int n = 0; n < 5; n++)
+//	{
+//		scanf("%d", &arr[n]);
+//	}
+//	printf("\n\n");
+//	printf("%d %d %d %d %d", arr[0], arr[1], arr[2], arr[3], arr[4]);
+//	return 0;
+//}
+
+////[~페이지18 문제2~]
+//int main()
+//{
+//	int arr[10];
+//	for (int n = 0; n < 10; n++)
+//	{
+//		scanf("%d", &arr[n]);
+//		for (int m = 1; m < 10; m++)
+//		{
+//			label:
+//				if (arr[n] == arr[n - m])//기존입력숫자와 비교하는 루프
+//				{
+//					printf("exist\n");
+//					printf("기존과 다른 숫자를 입력하세요: ");
+//					scanf("%d", &arr[n]);
+//					m = 1;
+//					goto label;
+//				}
+//				else
+//					continue;
+//		}
+//	}
+//	printf("\n\n");
+//	printf("%d %d %d %d %d %d %d %d %d %d", arr[0], arr[1], arr[2], arr[3], arr[4], arr[5], arr[6], arr[7], arr[8], arr[9]);
+//	return 0;
+//}
+
+//void main()
+//{
+//	int left = 3, right = 5;
+//	left = right;
+//	right = left;
+//	printf("left = %d, ", left);
+//	printf("right = %d \n", right);
+//}
+
+//void main()
+//{
+//	int left = 3, right = 5;
+//	int temp;
+//	temp = left;
+//	left = right;
+//	right = temp;
+//	printf("left = %d ", left);
+//	printf("right = %d \n", right);
+//}
+
+//void main()
+//{
+//	int num[2] = { 10,3 };
+//	int temp;
+//	temp = num[0];
+//	num[0] = num[1];
+//	num[1] = temp;
+//	printf("num[0] = %d, ", num[0]);
+//	printf("num[1] = %d, ", num[1]);
+//}
+
+////[~페이지19 문제1~]
+//int main()
+//{
+//	int arr[4] = { 4, 3, 1,2 };
+//	int temp;
+//	temp = arr[0];
+//	arr[0] = arr[2];
+//	arr[2] = arr[1];
+//	arr[1] = arr[3];
+//	arr[3] = temp;
+//	printf("새로운 순서: %d %d %d %d", arr[0], arr[1], arr[2], arr[3]);
+//	return 0;
+//}
+
+////[~페이지19 문제2~]
+//int main()
+//{
+//	int arr[4];
+//	for (int n = 0; n < 4; n++)
+//	{
+//		scanf("%d", &arr[n]);
+//	label:
+//		for (int m = 1; m < 4; m++)
+//		{
+//			if (arr[n - m] >= arr[n])
+//			{
+//				printf("기존과 다른 숫자를 입력하세요: ");
+//				scanf("%d", &arr[n]);
+//				m = 1;
+//				goto label;
+//			}
+//			else
+//				break;
+//		}
+//	}
+//	printf("새로운 순서: %d %d %d %d", arr[0], arr[1], arr[2], arr[3]);
+//	return 0;
+//}
+
+//void main()
+//{
+//	int one = 1, two = 2;
+//	int max = 0;
+//
+//	if (one > two) max = one;
+//	else			max = 2;
+//	printf("max = %d \n", max);
+//}
+
+//void main()
+//{
+//	int one = 1, two = 3, three = 2;
+//	int max = 0;
+//	if (one > two)
+//	{
+//		if (one > three)
+//			max = one;
+//		else
+//			max = three;
+//	}
+//	else {
+//		if (two > three)
+//			max = two;
+//		else
+//			max = three;
+//	}
+//	printf("max = %d \n", max);
+//}
+
+//void main()
+//{
+//	int a[3] = { 1,3,2 };
+//	int max = a[0];
+//	for (int i = 1; i < 3; i++)
+//	{
+//		if (max < a[i])
+//			max = a[i];
+//	}
+//	printf("max = %d \n", max);
+//}
+
+////[~페이지20 문제1~]
+//int main()
+//{
+//	int a[5] = { 1,3,6,4,2 };
+//	int min = a[0];
+//	int max = a[0];
+//	int sum = 0;
+//	float avg = 0;
+//
+//	for (int n = 1; n < 5; n++)
+//	{
+//		if (min > a[n])
+//			min = a[n];
+//	}
+//	for (int n = 1; n < 5; n++)
+//	{
+//		if (max < a[n])
+//			max = a[n];
+//	}
+//	for (int n = 0; n < 5; n++)
+//	{
+//		sum += a[n];
+//	}
+//	avg = (float)sum / 5;
+//	printf("%d %d %d %.2f\n", min, max, sum, avg);
+//}
+
+////[~페이지20 문제2~]
+//int main()
+//{
+//	int a[10] = { 1,1,4,5,6,2,3,3,4,1 };
+//	int repeat[6] = {0,0,0,0,0,0};
+//
+//	for (int n = 0; n < 10; n++)
+//	{
+//		for (int value = 1; value <= 6; value++)
+//		{
+//			if (a[n] == value)
+//			{
+//				repeat[value-1]++;
+//			}
+//		}
+//	}
+//	printf("각 주사위 눈이 나온 횟수: %d %d %d %d %d %d\n", repeat[0], repeat[1], repeat[2], repeat[3], repeat[4], repeat[5]);
+//	return 0;
+//}
+
+//int main()
+//{
+//	char arr[2][3] = { '1','2', '3', '4', '5', '6' };
+//	printf("%d\n", sizeof(arr));
+//	return 0;
+//}
+
+//int main()
+//{
+//	int arr[2][3] = { {'1','2','3'},{'4','5','6'} };
+//	printf("%d\n", sizeof(arr));
+//	return 0;
+//}
+
+//void main()
+//{
+//	int arr2d[5][4] = {
+//		{662, 7, 4, 74},
+//		{8, 396, 299, 95},
+//		{66, 73, 86, 0},
+//		{116, 26, 586, 42},
+//		{84,7,41,11},
+//	};
+//	for (int i = 0; i < 5; i++) {
+//		for (int j = 0; j < 4; j++) {
+//			printf("%3d", arr2d[i][j]);
+//		}
+//		printf("\n");
+//	}
+//}
+
+////[~페이지21 문제1~]
+//void main()
+//{
+//	int arr2d[3][3] = {
+//		{2, 4, 6},
+//		{8, 10, 12},
+//		{14, 16, 18}
+//	};
+//	for (int i = 0; i < 3; i++) {
+//		for (int j = 0; j < 3; j++) {
+//			printf("%3d", arr2d[j][i]);
+//		}
+//		printf("\n");
+//	}
+//}
+
+//void main()
+//{
+//	const int m = 4;
+//	const int n = 3;
+//	long data[m][n];
+//	for (int i = 0; i < m; i++)
+//	{
+//		for (int j = 0; j < n; j++)
+//			data[i][j] = i + j;
+//	}
+//	for (int i = 0; i < m; i++)
+//	{
+//		for (int j = 0; j < m; j++)//오타? j<n 이 아닌지...
+//			printf("%3d", data[i][j]);
+//		printf("\n");
+//	}
+//}
+
+//void main()
+//{
+//	const int m = 4;
+//	const int n = 3;
+//	long data[m][n];
+//	for (int i = 0; i < m; i++)
+//	{
+//		for (int j = 0; j < n; j++)
+//			data[i][j] = i + j;
+//	}
+//	for (int i = 0; i < m; i++)
+//	{
+//		for (int j = 0; j < m; j++)
+//		{
+//			printf("%3d", data[i][j]);
+//		}
+//		printf("\n");
+//	}
+//}
+
+////[~페이지22 문제2~]
+//void main()
+//{
+//	const int c = 5;
+//	const int r = 5;
+//	int data[c][r];
+//	for (int i = 0; i < c; i++)
+//	{
+//		for (int j = 0; j < r; j++)
+//		{
+//			data[i][j] = i * 5 + j + 1;
+//			printf("%3d", data[i][j]);
+//		}
+//		printf("\n");
+//	}
+//}
+
+////[~페이지22 문제3~]
+//void main()
+//{
+//	const int c = 5;
+//	const int r = 5;
+//	int data[c][r];
+//	for (int i = 5; i > 0; i--)
+//	{
+//		for (int j = 5; j > 0; j--)
+//		{
+//			data[c-i][r-j] = i * 5 - 5 + j;
+//			printf("%3d", data[c-i][r-j]);
+//		}
+//		printf("\n");
+//	}
+//}
+
+////[~페이지22 문제4~]
+//void main()
+//{
+//	const int c = 5;
+//	const int r = 5;
+//	int data[c][r];
+//	
+//	for (int i = 0; i < c; i++)
+//	{
+//		for (int j = 0; j < r; j++)
+//		{
+//			data[i][j] = i * 5 + j + 1;
+//		}
+//	}
+//
+//	int arr[c * r];
+//	for (int k = 0; k < (c * r); k++)
+//	{
+//		arr[k] = data[k/5][k%5];
+//		printf("%d ", arr[k]);
+//	}
+//}
+
+////[~페이지22 문제4~]
+//void main()
+//{
+//}
+
+////[~페이지22 문제5~]
+void main()
+{
+	const int c = 5;
+	const int r = 5;
+	int data[c][r];
+	for (int i = 0; i == 0; i++)
+	{
+		for (int j = 0; j < r; j++)
+		{
+			data[i][j] = i * 5 + j + 1;
+			printf("%3d", data[i][j]);
+		}
+		printf("\n");
+	}
+	for (int i = 1; i == 1; i++)
+	{
+		for (int j = 0; j < 4; j++)
+		{
+			data[i][j] = 3 * 5 + j + 1;
+			printf("%3d", data[i][j]);
+		}
+		data[i][5] = 6;
+		printf("%3d", data[i][5]);
+		printf("\n");
+	}
+	for (int i = 2; i == 2; i++)
+	{
+		for (int j = 0; j < 4; j++)
+		{
+			data[i][j] = 3 * 5 + j + 1;
+			printf("%3d", data[i][j]);
+		}
+		data[i][5] = 6;
+		printf("%3d", data[i][5]);
+		printf("\n");
+	}
+
+}
