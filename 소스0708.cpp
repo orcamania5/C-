@@ -4238,47 +4238,92 @@
 //	}
 //}
 
-////[~페이지22 문제4~]
+////[~페이지22 문제4-1)~]
+void main()
+{
+	const int N = 10;
+	int data[N];
+	int num;
+	int m = 0;
+	scanf("%d", &num);
+	for (; m < num; m++)
+	{
+		scanf("%d", &data[m]);
+	}
+
+	//[][]
+	int data2[N][N] = {};
+
+
+	for (int j = 0; j < num; j++)
+	{
+		for (int i = 0; i < num; i++)
+		{
+			data2[j][i] = '*';
+		}
+	}
+
+	for (int j = 0; j < N; j++)
+	{
+		for (int i = 0; i < N; i++)
+		{
+			printf("%c", data2[j][i]);
+		}
+		printf("\n");
+	}
+}
+
+////[~페이지22 문제4-2)~]
 //void main()
 //{
+//	const int N = 4;
+//	int data[N];
+//	scanf("%d", &data[0]);
+//	scanf("%d", &data[1]);
+//	scanf("%d", &data[2]);
+//	scanf("%d", &data[3]);
+//
+//	for (int j = 1; j < N; j++)
+//	{
+//		for (int i = 1; i <= data[j]; i++)
+//		{
+//			printf("*");
+//		}
+//		printf("\n");
+//	}
 //}
 
 ////[~페이지22 문제5~]
-void main()
-{
-	const int c = 5;
-	const int r = 5;
-	int data[c][r];
-	for (int i = 0; i == 0; i++)
-	{
-		for (int j = 0; j < r; j++)
-		{
-			data[i][j] = i * 5 + j + 1;
-			printf("%3d", data[i][j]);
-		}
-		printf("\n");
-	}
-	for (int i = 1; i == 1; i++)
-	{
-		for (int j = 0; j < 4; j++)
-		{
-			data[i][j] = 3 * 5 + j + 1;
-			printf("%3d", data[i][j]);
-		}
-		data[i][5] = 6;
-		printf("%3d", data[i][5]);
-		printf("\n");
-	}
-	for (int i = 2; i == 2; i++)
-	{
-		for (int j = 0; j < 4; j++)
-		{
-			data[i][j] = 3 * 5 + j + 1;
-			printf("%3d", data[i][j]);
-		}
-		data[i][5] = 6;
-		printf("%3d", data[i][5]);
-		printf("\n");
-	}
-
-}
+//void main()
+//{
+//	const int r = 5;
+//	const int c = 5;
+//	int data[r][c];
+//	for (int i = 0; i < r; i++)
+//	{
+//		for (int j = 0; j < c; j++)
+//		{
+//			data[i][j] = i * 5 + j + 1;
+//		}
+//	}
+//	for (int i = 0; i < r; i++)
+//	{
+//		for (int j = 0; j < c; j++)
+//		{
+//			if (i == 0 && j <= 4)
+//			{
+//				printf("%3d", data[i][j]);
+//			}
+//			else if (i <= 4 && i >=1 && j == 0)
+//			{
+//				printf("%3d", data[j][i]);
+//			}
+//			else if (i <= 4 && j == 4)
+//			{
+//				printf("%3d", data[j][i]);
+//			}
+//
+//		}
+//		printf("\n");
+//	}
+//}
