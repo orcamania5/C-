@@ -4244,32 +4244,33 @@ void main()
 	const int N = 10;
 	int data[N];
 	int num;
-	int m = 0;
+	
 	scanf("%d", &num);
-	for (; m < num; m++)
+	for (int m = 0; m < num; m++)
 	{
 		scanf("%d", &data[m]);
 	}
+	//for (int m = 0; m < num; m++)
+	//{
+	//	for (int star_repeat = 0; star_repeat < data[m]; star_repeat++)
+	//	{
+	//		printf("*");
+	//	}
+	//	printf("\n");
+	//}
 
-	//[][]
+	//[][] 2차원 배열안에 *를 넣는것
 	int data2[N][N] = {};
-
-
+	int m = 0;
 	for (int j = 0; j < num; j++)
 	{
-		for (int i = 0; i < num; i++)
+		for (int i = 0; i < data[m]; i++)
 		{
 			data2[j][i] = '*';
-		}
-	}
-
-	for (int j = 0; j < N; j++)
-	{
-		for (int i = 0; i < N; i++)
-		{
 			printf("%c", data2[j][i]);
 		}
 		printf("\n");
+		m++;
 	}
 }
 
