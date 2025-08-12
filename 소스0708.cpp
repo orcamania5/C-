@@ -4238,59 +4238,40 @@
 //	}
 //}
 
-////[~페이지22 문제4-1)~]
-void main()
-{
-	const int N = 10;
-	int data[N];
-	int num;
-	
-	scanf("%d", &num);
-	for (int m = 0; m < num; m++)
-	{
-		scanf("%d", &data[m]);
-	}
-	//for (int m = 0; m < num; m++)
-	//{
-	//	for (int star_repeat = 0; star_repeat < data[m]; star_repeat++)
-	//	{
-	//		printf("*");
-	//	}
-	//	printf("\n");
-	//}
-
-	//[][] 2차원 배열안에 *를 넣는것
-	int data2[N][N] = {};
-	int m = 0;
-	for (int j = 0; j < num; j++)
-	{
-		for (int i = 0; i < data[m]; i++)
-		{
-			data2[j][i] = '*';
-			printf("%c", data2[j][i]);
-		}
-		printf("\n");
-		m++;
-	}
-}
-
-////[~페이지22 문제4-2)~]
+////[~페이지22 문제4~]
 //void main()
 //{
-//	const int N = 4;
+//	const int N = 10;
 //	int data[N];
-//	scanf("%d", &data[0]);
-//	scanf("%d", &data[1]);
-//	scanf("%d", &data[2]);
-//	scanf("%d", &data[3]);
-//
-//	for (int j = 1; j < N; j++)
+//	int num;
+//	
+//	scanf("%d", &num);
+//	for (int m = 0; m < num; m++)
 //	{
-//		for (int i = 1; i <= data[j]; i++)
+//		scanf("%d", &data[m]);
+//	}
+//
+//	//[][] 2차원 배열안에 *를 넣는것
+//	int data2[N][N] = {};
+//	int m = 0;
+//	for (int j = 0; j < num; j++)
+//	{
+//		for (int i = 0; i < data[m]; i++)
 //		{
-//			printf("*");
+//			data2[i][j] = '*';
+//		}
+//		m++;
+//	}
+//	m = 0;
+//	for (int j = 0; j < N; j++)
+//	{
+//		for (int i = 0; i < N; i++)
+//		{
+//			if(data2[j][i] == 0)printf(" ");
+//			else printf("%c", data2[j][i]);
 //		}
 //		printf("\n");
+//		m++;
 //	}
 //}
 
@@ -4328,3 +4309,196 @@ void main()
 //		printf("\n");
 //	}
 //}
+
+////[~페이지22 문제5~]
+//void main()
+//{
+//	const int N = 10;
+//	int data[N][N] = {};
+//	int y = 0, x = -1;
+//	int num = 1;
+//	int repeat = N;
+//	int a = 1;
+//	
+//	for (;;)
+//	{
+//		for (int j = 0; j < repeat; j++)
+//		{
+//			x+=a;
+//			data[y][x] = num;
+//			num++;
+//		}
+//		repeat--;
+//		if (repeat == 0)
+//			break;
+//
+//		for (int j = 0; j < repeat; j++)
+//		{
+//			y+=a;
+//			data[y][x] = num;
+//			num++;
+//		}
+//		a *= -1;
+//
+//		//for (int j = 0; j < repeat; j++)
+//		//{
+//		//	x+=-1;
+//		//	data[y][x] = num;
+//		//	num++;
+//		//}
+//		//repeat--;
+//
+//		//for (int j = 0; j < repeat; j++)
+//		//{
+//		//	y+=-1;
+//		//	data[y][x] = num;
+//		//	num++;
+//		//}
+//		
+//	}
+//
+//	//for (int j = 0; j < repeat; j++)
+//	//{
+//	//	x++;
+//	//	data[y][x] = num;
+//	//	num++;
+//	//}
+//	//repeat--;
+//
+//	//for (int j = 0; j < repeat; j++)
+//	//{
+//	//	y++;
+//	//	data[y][x] = num;
+//	//	num++;
+//	//}
+//
+//	//for (int j = 0; j < repeat; j++)
+//	//{
+//	//	x--;
+//	//	data[y][x] = num;
+//	//	num++;
+//	//}
+//	//repeat--;
+//
+//	//for (int j = 0; j < repeat; j++)
+//	//{
+//	//	y--;
+//	//	data[y][x] = num;
+//	//	num++;
+//	//}
+//
+//	for (int i = 0; i < N; i++)
+//	{
+//		for (int j = 0; j < N; j++)
+//		{
+//			printf("%3d ", data[i][j]);
+//		}
+//		printf("\n");
+//	}
+//}
+
+//void main()
+//{
+//	int b = 100;
+//	int* pB = &b;
+//
+//	printf("b = %d\n", b);
+//	printf("b = %x\n", &b);
+//	printf("b = %d\n", *pB);
+//	printf("b = %x\n", pB);
+//}
+
+//void main()
+//{
+//	char a = 'A';
+//	char* pA = &a;
+//
+//	int b = 100;
+//	int* pB = &b;
+//
+//	double c = 3.14;
+//	double* pC = &c;
+//
+//	printf("pA의 크기 : %d byte\n", sizeof(pA));
+//	printf("pB의 크기 : %d byte\n", sizeof(pB));
+//	printf("pC의 크기 : %d byte\n", sizeof(pC));
+//
+//	printf("*pA의 크기 : %d byte\n", sizeof(*pA));
+//	printf("*pB의 크기 : %d byte\n", sizeof(*pB));
+//	printf("*pC의 크기 : %d byte\n", sizeof(*pC));
+//}
+
+//void main()
+//{
+//	char str[] = "programming";
+//	char* ptr1, * ptr2;
+//	ptr1 = &str[0];
+//	ptr2 = &str[7];
+//
+//	printf("두 포인터 간의 차는 %d입니다\n", ptr2 - ptr1);
+//
+//	printf("%x\n", ptr1 + 1);
+//	printf("%c\n", *(ptr1+1));
+//
+//	printf("%x\n", ptr1 + 3);
+//	printf("%c\n", *(ptr1 + 3));
+//}
+
+//void main()
+//{
+//	int *numptr;
+//	int num1 = 10;
+//	int num2 = 20;
+//
+//	numptr = &num1;
+//	printf("%d\n", *numptr);
+//
+//	numptr = &num2;
+//	printf("%d\n", *numptr);
+//}
+
+//int main()
+//{
+//	int number[2] = { 1,2 };
+//	void *p = number;
+//	printf("%d\n", *(int*)p);
+//	return 0;
+//}
+
+//int main()
+//{
+//	int fibonacci[5] = { 3,5,8,13,21 };
+//	int* ptrFibo;
+//	ptrFibo = fibonacci;
+//	int* ptrFibo1 = &fibonacci[1];
+//	int* ptrFibo4 = fibonacci + 4;
+//	printf("> %d - %d", *ptrFibo4, *ptrFibo1); //배열의 값을 빠는 것
+//	printf(">> %d\n", ptrFibo4 - ptrFibo1); //배열에서 저장된 주소의 위치를 빼는 것
+//
+//	printf("%d", ptrFibo[1]);
+//	printf("%d", ptrFibo[0]);
+//	printf("%d", ptrFibo[-1]);
+//
+//	return 0;
+//}
+
+//int main()
+//{
+//	int numArr[5] = { 11,22,33,44,55 };
+//	int* numptrA;
+//	void *ptr;
+//
+//	numptrA = &numArr[2];
+//	ptr = numArr;
+//
+//	printf("%d\n", *(numptrA-1));
+//	printf("%d\n", *(((int *)ptr)+4));
+//
+//	return 0;
+//}
+
+////[~페이지24 문제1~]
+int main()
+{
+
+}
