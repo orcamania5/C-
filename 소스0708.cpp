@@ -4498,7 +4498,162 @@
 //}
 
 ////[~페이지24 문제1~]
-int main()
-{
+//int main()
+//{
+//	int arr[5] = {1,2,3,4,5};
+//	int* ptr;
+//	ptr = arr;
+//	printf("%d", *(ptr + 2));
+//}
 
+//int main()
+//{
+//	int arr[5] = { 2,4,6,8,10 };
+//	int* p = &arr[0];
+//	for (int i = 0; i < 5; i++)
+//	{
+//		printf("%d", *p++);
+//	}
+//	return 0;
+//}
+
+//int main()
+//{
+//	int arr[2][3] = { {1,2,3},{4,5,6} };
+//	int* p = arr[0];
+//	for (int i=0;i<6;i++)
+//	{
+//		printf("%d", *p++);
+//	}
+//	return 0;
+//}
+
+//int main()
+//{
+//	int num[4] = { 1,2,3,4 };
+//	int* pt = num;
+//
+//	pt++;
+//	*pt++= 5;
+//	*pt++= 10;
+//	
+//	pt--;
+//	*pt+++= 20;
+//	for (int i = 0; i < 4; i++)
+//	{
+//		printf("%d", num[i]);
+//	}
+//	printf("\n");
+//	return 0;
+//}
+
+//void main()
+//{
+//	char str[] = "기울어진 운동장 : 애초부터 공정한 경쟁을 할 수 없는 상황을 비유적으로 이르는 말.";
+//	char* ptr = &str[7];
+//	printf("%s\n\n", ptr);
+//}
+
+////[~페이지26 문제1~]
+//int main()
+//{
+//	int arr[100] = {};
+//	
+//	for (int i = 0; i < 100; i++)
+//	{
+//		arr[i] = i+1;
+//		printf("%3d", arr[i]);
+//	}
+//	printf("\n");
+//	for (int i = 99; i >= 0; i--)
+//	{
+//		arr[i] = i+1;
+//		printf("%3d", arr[i]);
+//	}
+//	printf("\n");
+//
+//	int* ptr;
+//	ptr = &arr[99];
+//
+//	for (int i = 0; i<100;i++)
+//	{
+//		printf("%3d", *ptr);
+//		*ptr--;
+//	}
+//	return 0;
+//}
+
+////[~페이지26 문제2~]
+//int main()
+//{
+//	int arr[100] = {};
+//
+//	for (int i = 0; i < 100; i++)
+//	{
+//		arr[i] = i + 1;
+//		printf("%3d", arr[i]);
+//	}
+//	printf("\n");
+//
+//	int num = 50;
+//	int* ptr;
+//	ptr = &arr[num];
+//
+//	for (int k = 0; k < num; k++)
+//	{
+//		printf("%3d", *ptr);
+//		*(ptr++);
+//	}
+//	ptr = &arr[0];
+//	for (int k = 0; k < (num-1); k++)
+//	{
+//		printf("%3d", *ptr);
+//		*(ptr++);
+//	}
+//	return 0;
+//}
+
+//int main()
+//{
+//	char str[] = "memmove can be very useful.......";
+//	memmove(str + 20, str + 15, 11);
+//	puts(str);
+//	return 0;
+//}
+
+struct mydata
+{
+	int a;
+	char b[25];
+};
+void main()
+{
+	char buf[5];
+	memset(buf, '1', 5);
+	printf("%s\n", buf);
+
+	buf[4] = 0x00;
+	printf("%s\n", buf);
+
+	struct mydata data;
+	memset((void*)&data, 0x00, sizeof(data));
+	data.b[0] = 'k';
+	printf("%d - %s\n", data.a, data.b);
 }
+
+//int main()
+//{
+//	char* str1 = (char*)"coding";
+//	char* str2 = (char*)"coding";
+//	char* str3 = (char*)"coding.ne.kr";
+//	char* str4 = (char*)"ne.kr";
+//	char* str5 = (char*)"abcd";
+//
+//	printf("%s with %s = %d\n", str1, str2, memcmp(str1, str2, strlen(str1)));
+//	printf("%s with %s(str1 size) = %d\n", str1, str3, memcmp(str1, str3, strlen(str1)));
+//	printf("%s with %s(str2 size) = %d\n", str1, str3, memcmp(str1, str3, strlen(str3)));
+//	printf("%s with %s = %d\n", str1, str4, memcmp(str1, str4, strlen(str1)));
+//	printf("%s with %s(str1 size) = %d\n", str1, str5, memcmp(str1, str5, strlen(str1)));
+//	printf("%s with %s(str5 size) = %d\n", str1, str5, memcmp(str1, str5, strlen(str5)));
+//	return 0;
+//}
