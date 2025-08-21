@@ -4503,7 +4503,9 @@
 //	int arr[5] = {1,2,3,4,5};
 //	int* ptr;
 //	ptr = arr;
-//	printf("%d", *(ptr + 2));
+//	ptr += 2;//ptr에 2를 더해서 주소칸 2번이동하는 명령
+//
+//	printf("%d", *ptr);
 //}
 
 //int main()
@@ -4512,7 +4514,7 @@
 //	int* p = &arr[0];
 //	for (int i = 0; i < 5; i++)
 //	{
-//		printf("%d", *p++);
+//		printf("%d", *p++);//반복할 때 마다 p의 주소를 1씩 이동하는 명령
 //	}
 //	return 0;
 //}
@@ -4523,7 +4525,7 @@
 //	int* p = arr[0];
 //	for (int i=0;i<6;i++)
 //	{
-//		printf("%d", *p++);
+//		printf("%d", *p++);//반복할 때 마다 2차원 배열의 p의 주소를 1씩 이동하는 명령
 //	}
 //	return 0;
 //}
@@ -4534,11 +4536,11 @@
 //	int* pt = num;
 //
 //	pt++;
-//	*pt++= 5;
-//	*pt++= 10;
+//	*pt++ = 5; //num[1]의 값을 먼저! 5로 바꾸고 그다음에 pt주소에 1을 더해서 그 뒤에 num[2]로 위치를 옮김. 연산 순서가 뒤바뀐 것을 이해하는 것이 중요함!
+//	*pt++ = 10; //num[2]의 값을 먼저! 10으로 바꾸고 그다음에 pt주소에 1을 더해서 그 뒤에 num[3]로 위치를 옮김. 연산 순서가 뒤바뀐 것을 이해하는 것이 중요함!
 //	
-//	pt--;
-//	*pt+++= 20;
+//	pt--; //pt의 주소를 다시 num[3] 에서 num[2]로 바꿈
+//	*pt++ += 20; // num[2]의 값을 먼저! 20을 더하고(+=연산) 그다음에 pt주소에 1을 더해서 그 뒤에 num[3]로 위치를 옮김. 연산 순서가 뒤바뀐 것을 이해하는 것이 중요함!
 //	for (int i = 0; i < 4; i++)
 //	{
 //		printf("%d", num[i]);
@@ -4549,8 +4551,20 @@
 
 //void main()
 //{
-//	char str[] = "기울어진 운동장 : 애초부터 공정한 경쟁을 할 수 없는 상황을 비유적으로 이르는 말.";
+//	char str[] = "기울어진운동장 : 애초부터 공정한 경쟁을 할 수 없는 상황을 비유적으로 이르는 말.";//ASCII코드에서 한글은 2바이트를 차이, 스페이스바는 1바이트
 //	char* ptr = &str[7];
+//	printf("%s\n\n", ptr);
+//}
+
+//void main()
+//{
+//	char str[] = "기울어진 운동장 : 어느 한 쪽으로 기울어진 운동장에서는 아무리 뛰어난 사람이라도 경기에서 이길 수 없다는 데서 유래.";
+//	char* ptr = &str[7];
+//
+//	printf("%s\n\n", str);
+//	str[15] = 'a';
+//	str[23] = 'b';
+//	str[25] = 'c';
 //	printf("%s\n\n", ptr);
 //}
 
@@ -4578,7 +4592,7 @@
 //	for (int i = 0; i<100;i++)
 //	{
 //		printf("%3d", *ptr);
-//		*ptr--;
+//		ptr--;
 //	}
 //	return 0;
 //}
@@ -4597,18 +4611,14 @@
 //
 //	int num = 50;
 //	int* ptr;
-//	ptr = &arr[num];
 //
-//	for (int k = 0; k < num; k++)
+//	for (ptr = &arr[num]; *ptr != 50; ptr++)
 //	{
 //		printf("%3d", *ptr);
-//		*(ptr++);
-//	}
-//	ptr = &arr[0];
-//	for (int k = 0; k < (num-1); k++)
-//	{
-//		printf("%3d", *ptr);
-//		*(ptr++);
+//		if (*ptr == 100) //배열 끝에 도달하면 처음으로 되돌리는 명령어
+//		{
+//			ptr -= 100;
+//		}
 //	}
 //	return 0;
 //}
@@ -4621,25 +4631,25 @@
 //	return 0;
 //}
 
-struct mydata
-{
-	int a;
-	char b[25];
-};
-void main()
-{
-	char buf[5];
-	memset(buf, '1', 5);
-	printf("%s\n", buf);
-
-	buf[4] = 0x00;
-	printf("%s\n", buf);
-
-	struct mydata data;
-	memset((void*)&data, 0x00, sizeof(data));
-	data.b[0] = 'k';
-	printf("%d - %s\n", data.a, data.b);
-}
+//struct mydata
+//{
+//	int a;
+//	char b[25];
+//};
+//void main()
+//{
+//	char buf[5];
+//	memset(buf, '1', 5);
+//	printf("%s\n", buf);//buf라는 string 배열의 마지막의 buf[5]위치에 \0 NULL문자가 아닌 숫자'1'이 들어왔음으로 출력하면 한자같은 쓰레기값이 나옴
+//
+//	buf[4] = 0x00;
+//	printf("%s\n", buf);
+//
+//	struct mydata data;
+//	memset((void*)&data, 0x00, sizeof(data));
+//	data.b[0] = 'k';
+//	printf("%d - %s\n", data.a, data.b);
+//}
 
 //int main()
 //{
@@ -4657,3 +4667,15 @@ void main()
 //	printf("%s with %s(str5 size) = %d\n", str1, str5, memcmp(str1, str5, strlen(str5)));
 //	return 0;
 //}
+
+//int main()
+//{
+//	int src_data[10] = { 0,1,2,3,4,5 };
+//	int dst_data[10] = { 10,20,30,40,50 };
+//	memcpy(dst_data, src_data, sizeof(int) * 4);
+//
+//	printf("%d %d %d %d %d\n", src_data[0], src_data[1], src_data[2], src_data[3], src_data[4]);
+//	printf("%d %d %d %d %d\n", dst_data[0], dst_data[1], dst_data[2], dst_data[3], dst_data[4]);
+//}
+
+[2025-08-21일 수업까지한 부분]
