@@ -919,8 +919,10 @@
 //			continue;
 //		}
 //		else
+//		{
 //			printf("number = %d", number);
 //			break;
+//		}
 //	}
 //	return 0;
 //}
@@ -4678,4 +4680,233 @@
 //	printf("%d %d %d %d %d\n", dst_data[0], dst_data[1], dst_data[2], dst_data[3], dst_data[4]);
 //}
 
-[2025-08-21일 수업까지한 부분]
+//int main()
+//{
+//	char str[20] = "coding";
+//
+//	strcat(str, ".ne.kr");
+//	printf("%s\n", str);
+//	return 0;
+//}
+
+//int main()
+//{
+//	char str[10];
+//	scanf("%s", str);
+//	printf("입력한 문자열 : %s\n",str);
+//	printf("문자열의 길이 : %d\n", strlen(str));
+//	return 0;
+//}
+
+//int main()
+//{
+//	char str[] = "This is a sample string";
+//	char* pch;
+//	printf("Looking for the 's'character in \" %s\"... \n", str);
+//	pch = strchr(str, 's');
+//
+//	while (pch != NULL)
+//	{
+//		printf("found at %d\n", pch - str + 1);
+//		pch = strchr(pch + 1, 's');
+//	}
+//	return 0;
+//}
+
+//int main()
+//{
+//	char str[] = "This is simple string";
+//	char *pch;
+//
+//	pch = strstr(str, "simple");
+//	strncpy(pch, "sample", 6);
+//
+//	printf("%s\n", str);
+//	return 0;
+//}
+
+//int main()
+//{
+//	const char* str1 = "LPUX";
+//	const char* str2 = "HINUX";
+//	const char* str3 = "SOLARIS";
+//
+//	printf("s1[%-7s], s2[%-7s] => ret = [%2d]\n", str1, str2, strcmp(str1, str2));
+//	printf("s2[%-7s], s3[%-7s] => ret = [%2d]\n", str2, str3, strcmp(str2, str3));
+//	printf("s3[%-7s], s1[%-7s] => ret = [%2d]\n", str3, str1, strcmp(str3, str1));
+//	return 0;
+//}
+
+//int main()
+//{
+//	char buf[25];
+//
+//	strcpy(buf, "hello world");
+//	printf("%s\n", buf);
+//	strncpy(buf, "www world", 5);
+//	printf("%s\n", buf);
+//	return 0;
+//}
+
+////[~페이지29 문제1~]
+//int main()
+//{
+//	char buff[100];
+//	gets_s(buff);
+//	char input;
+//
+//	for (;;)
+//	{
+//		printf("찾을 알파벳 입력, 0이면 종료 => ");
+//		scanf(" %c", &input);
+//		if (input == '0')
+//			break;
+//
+//		char* search = strchr(buff, input);
+//
+//		if (search == NULL)
+//		{
+//			printf("없습니다.\n");
+//			continue;
+//		}
+//
+//		printf("%d\n", search - buff + 1);
+//	}
+//	return 0;
+//}
+
+//int parsing(char* string, int* data)
+//{
+//	char* p;
+//	int cnt;
+//	cnt = 0;
+//	p = strtok(string, "_");
+//	while (p)
+//	{
+//		data[cnt++] = atoi(p);
+//		p = strtok(NULL, "_");
+//	}
+//	return cnt;
+//}
+//int main()
+//{
+//	char String[] = "101_102_103_104_105";
+//	int data[10];
+//	int cnt, i;
+//
+//	cnt = parsing(String, data);
+//
+//	for (i = 0; i < cnt; i++)
+//	{
+//		printf("%d\n", data[i]);
+//	}
+//	return 0;
+//}
+
+//int main()
+//{
+//	int integer = 123;
+//	char character = 'c';
+//	char string[] = "hello, world";
+//	int* pointer = &integer;
+//	double pi = 3.141592;
+//	char buf[100];
+//
+//	sprintf(buf, "integer : (decimal) %d (octal) %o \n", integer, integer);
+//	printf("%s \n", buf);
+//
+//	sprintf(buf, "character : %c \n", character);
+//	printf("%s \n", buf);
+//
+//	sprintf(buf, "string : %s \n", string);
+//	printf("%s \n", buf);
+//
+//	sprintf(buf, "pointer addr : %p \n", pointer);
+//	printf("%s \n", buf);
+//
+//	sprintf(buf, "floating point : %e //%f \n", pi, pi);
+//	printf("%s \n", buf);
+//
+//	sprintf(buf, "percent symbol : %% \n");
+//	printf("%s \n", buf);
+//
+//	return 0;
+//}
+
+////[~페이지30 문제2~]
+//char parsing(char* string, int* data)
+//{
+//	char* p;
+//	char oper;
+//	p = strtok(string, " ");
+//	data[0] = atoi(p);
+//	p = strtok(NULL, " ");
+//	oper = *p;
+//	p = strtok(NULL, " ");
+//	data[1] = atoi(p);
+//	p = strtok(NULL, " ");
+//	//= 표시는 굳이 char equal 에 저장하지 않아도 되고 코드 줄1개를 아예 입력하지 않아 생략이 가능함!!
+//	p = strtok(NULL, " ");
+//	data[2] = atoi(p);
+//	return oper;
+//}
+//int main()
+//{
+//	char String[] = "9 % 2 = 1";
+//	int data[3];
+//
+//	char oper = parsing(String, data);
+//	
+//	//printf("%d %d %d\n", data[0], data[1], data[2]);
+//
+//	int result = 0;
+//
+//	if (oper == '-')result = data[0] - data[1];
+//	else if (oper == '+')result = data[0] + data[1];
+//	else if (oper == '*')result = data[0] * data[1];
+//	else if (oper == '/')result = data[0] / data[1];
+//	else if (oper == '%')result = data[0] % data[1];
+//		
+//	if (result == data[2])
+//		printf("참입니다.\n");
+//	else
+//		printf("%d %c %d 는 %d입니다.\n", data[0], oper, data[1], result);
+//	return 0;
+//}
+
+struct GM
+{
+	int no;
+	char name[10];
+	int part;
+	int salary;
+};
+struct COMPANY
+{
+	GM gms[5];
+	int gmCount = 0;
+};
+int HireGM_once
+void main()
+{
+	printf("게임을 출시해보자!\n");
+	COMPANY gameCo;
+
+	printf("먼저 GM부터 고용할까?\n");
+	while (1)
+	{
+		gameCo = HireGM_once(gameCo);
+		printf("더 고용할까?(y/n) : ");
+		char ch;
+		do
+		{
+			ch = getchar();
+		}
+		while (ch != 'y' && ch != 'n');
+		if (ch == 'n')
+			break;
+	}
+	printf("GM %d명을 뽑았다!\n", gameCo.gmCount);
+}
+
+//[2025-09-06일 수업까지한 부분]
