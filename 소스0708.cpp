@@ -4874,39 +4874,243 @@
 //	return 0;
 //}
 
-struct GM
-{
-	int no;
-	char name[10];
-	int part;
-	int salary;
-};
-struct COMPANY
-{
-	GM gms[5];
-	int gmCount = 0;
-};
-int HireGM_once
-void main()
-{
-	printf("게임을 출시해보자!\n");
-	COMPANY gameCo;
+////[~페이지31 문제3~]
+//struct GM
+//{
+//	int no;
+//	char name[10];
+//	int part;
+//	int salary;
+//};
+//struct COMPANY
+//{
+//	GM gms[5];//이 줄의 뜻은 gms[5] 배열에 5개가 들어가니까 GM의 구조체를 가지고 있는 게임매니저를 5명(5번) hire 할 수 있다는 의미
+//	int gmCount = 0;
+//};
+//struct COMPANY HireGM_once(COMPANY aaaaa)//Custom 함수에 argument로 구조체 변수가 들어가면 앞에 struct 라고 굳이 안적어도 됨 & 괄호안에 회색 argument 부분의 구조체이름 뒤에 나오는 aaaaa는 어떤 것을 입력해도 상관없음
+//{
+//	aaaaa.gms[aaaaa.gmCount].no = aaaaa.gmCount + 1;//
+//	printf("개발자의 이름을 입력하세요 => ");
+//	scanf(" %s", &aaaaa.gms[aaaaa.gmCount].name);
+//	printf("개발자가 담당하는 부분을 입력하세요 => ");
+//	scanf("%d", &aaaaa.gms[aaaaa.gmCount].part);
+//	printf("개발자의 월급을 입력하세요 => ");
+//	scanf("%d", &aaaaa.gms[aaaaa.gmCount].salary);
+//	aaaaa.gmCount++;
+//	return aaaaa;//위의 함수선언에서 데이터 타입이 struct 이니 리턴값도 struct 구조체의 이름이어야 함
+//}
+//void main()
+//{
+//	printf("게임을 출시해보자!\n");
+//	COMPANY gameCo;
+//
+//	printf("먼저 GM부터 고용할까?\n");
+//	while (1)
+//	{
+//		gameCo = HireGM_once(gameCo);
+//		printf("더 고용할까?(y/n) : ");
+//		char ch;
+//		do
+//		{
+//			ch = getchar(); //getchar 함수는 1개의 character/문자를 읽고 인식함
+//		}
+//		while (ch != 'y' && ch != 'n');
+//		if (ch == 'n')
+//			break;
+//	}
+//	printf("GM %d명을 뽑았다!\n", gameCo.gmCount);
+//}
 
-	printf("먼저 GM부터 고용할까?\n");
-	while (1)
+//struct SNACK
+//{
+//	int price;
+//	int stock;
+//	char name[20];
+//};
+//void main()
+//{
+//	const int N = 2;
+//	SNACK snacks[N] = {
+//		{1500,3,"레몬칩"}, {1000,2,"달고나"} };
+//	printf("<<과자자판기!>>\n");
+//	for (int i = 0; i < N; i++)
+//	{
+//		printf("%d.[%6s] %4d원 (%d개남음)\n", (i + 1), snacks[i].name, snacks[i].price, snacks[i].stock);
+//	}
+//	int choice;
+//	scanf("%d", &choice);
+//	printf("%s가 나왔습니다.\n", snacks[choice-1].name);
+//}
+
+////[~페이지31 문제4~]
+//struct DRINK
+//{
+//	int price;
+//	int stock;
+//	char name[20];
+//};
+//void main()
+//{
+//	const int N = 4;
+//	DRINK drinks[N] = {
+//		{2000,3,"포카리스웨트"}, {1500,5,"봉봉"}, {2000,7,"옥수수수염차"}, {3000,5,"파워에이드"}};
+//	printf("<<음료수자판기!>>\n");
+//	for (int i = 0; i < N; i++)
+//	{
+//		printf("%d.[%6s] %4d원 (%d개남음)\n", (i + 1), drinks[i].name, drinks[i].price, drinks[i].stock);
+//	}
+//	int money;
+//	printf("넣을 금액을 입력해주세요 => ");
+//	scanf("%d", &money);
+//	for (;;)
+//	{
+//		int choice;
+//		printf("마실 음료를 골라주세요 => ");
+//		scanf("%d", &choice);
+//		if (choice == 0)
+//			break;
+//		
+//		if (choice < 0 || choice > N)
+//		{
+//			printf("자판기에 없는 음료입니다. 다시 선택해주세요\n");
+//			continue;
+//		}
+//		
+//		if (money < drinks[choice - 1].price)
+//		{
+//			printf("잔액은 %d입니다. 잔액이 부족합니다. 돈을 더 넣어주세요. 추가하실 금액을 입력하세요. => ", money);
+//			int addmoney;
+//			scanf("%d", &addmoney);
+//			money = money + addmoney;
+//			continue;
+//		}
+//		
+//		if (drinks[choice - 1].stock == 0)
+//		{
+//			printf("재고가 부족합니다. 다시 선택해주세요.\n");
+//			continue;
+//		}
+//
+//		printf("%s가 나왔습니다.\n", drinks[choice - 1].name);
+//		money = money - drinks[choice - 1].price;
+//		drinks[choice - 1].stock--;
+//		printf("잔액은 %d입니다. 다음 음료를 골라주시거나 0번을 눌러 거스름돈을 받아주세요.\n", money);
+//		for (int i = 0; i < N; i++)
+//		{
+//			printf("%d.[%6s] %4d원 (%d개남음)\n", (i + 1), drinks[i].name, drinks[i].price, drinks[i].stock);
+//		}
+//	}
+//	printf("거스름돈은 %d입니다.\n", money);
+//}
+
+//int main(void)
+//{
+//	int* iptr = (int*)malloc(sizeof(int));
+//	char* cptr = (char*)malloc(sizeof(char));
+//	double* dptr = (double*)malloc(sizeof(double));
+//	*iptr = 5;
+//	*cptr = 'a';
+//	*dptr = 3.5;
+//	printf("%d, %c, %lf", *iptr, *cptr, *dptr);
+//
+//	free(iptr);
+//	free(cptr);
+//	free(dptr);
+//}
+
+//int main()
+//{
+//	int arr_1[5];
+//	int* arr_2;
+//
+//	for (int i = 0; i < 5; i++)
+//	{
+//		arr_1[i] = i + 1;
+//	}
+//	arr_2 = (int*)malloc(sizeof(int) * 5);
+//	for (int i = 0; i < 5; i++)
+//	{
+//		arr_2[i] = arr_1[i];
+//		printf("%d,", arr_2[i]);
+//	}
+//	free(arr_2);
+//	return 0;
+//}
+
+//int main()
+//{
+//	int nRow = 5, nCol = 4;
+//	int** aNum;
+//
+//	aNum = (int**)malloc(nRow * sizeof(int*));
+//	for (int i = 0; i < nRow; i++)
+//	{
+//		aNum[i] = (int*)malloc(nCol * sizeof(int));
+//		for (int j = 0; j < nCol; ++j)
+//		{
+//			aNum[i][j] = i * 10 + j;
+//		}
+//	}
+//	for (int i = 0; i < nRow; ++i)
+//	{
+//		for (int j = 0; j < nCol; ++j)
+//		{
+//			printf("%02d ", aNum[i][j]);
+//		}
+//		printf("\n");
+//	}
+//	for (int i = 0; i < nRow; ++i)
+//		free(aNum[i]);
+//	free(aNum);
+//}
+
+////[~페이지32 문제1~]
+//int main()
+//{
+//	int nRow = 5, nCol = 4;
+//	int** aNum;
+//
+//	//aNum = (int**)malloc(nRow * sizeof(int*));
+//	aNum = new int*[nRow];
+//	for (int i = 0; i < nRow; i++)
+//	{
+//		//aNum[i] = (int*)malloc(nCol * sizeof(int));
+//		aNum[i] = new int[nCol];
+//		for (int j = 0; j < nCol; ++j)
+//		{
+//			aNum[i][j] = i * 10 + j;
+//		}
+//	}
+//	for (int i = 0; i < nRow; ++i)
+//	{
+//		for (int j = 0; j < nCol; ++j)
+//		{
+//			printf("%02d ", aNum[i][j]);
+//		}
+//		printf("\n");
+//	}
+//	for (int i = 0; i < nRow; ++i)
+//		delete aNum[i];
+//	delete aNum;
+//}
+
+////[~페이지32 문제2~]
+int main()
+{
+	int* array_address;
+
+	for (int i = 0; i < 10; i++)
 	{
-		gameCo = HireGM_once(gameCo);
-		printf("더 고용할까?(y/n) : ");
-		char ch;
-		do
-		{
-			ch = getchar();
-		}
-		while (ch != 'y' && ch != 'n');
-		if (ch == 'n')
-			break;
+		array_address[i] = rand();
 	}
-	printf("GM %d명을 뽑았다!\n", gameCo.gmCount);
+	array_address = (int*)malloc(10 * sizeof(int));
+	for (int i = 0; i < 10; i++)
+	{
+		array_address[i] = array[i];
+		printf("%d ", array_address[i]);
+	}
+	free(array_address);
+	return 0;
 }
 
-//[2025-09-06일 수업까지한 부분]
+//[2025-09-08일 수업까지한 부분]
