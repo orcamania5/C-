@@ -3180,12 +3180,12 @@
 
 ////[코드 라인 3179~????까지 C언어 심화책 내용]
 ////[Starting Codes]
-#define _CRT_SECURE_NO_WARNINGS
-#include<stdio.h>
-#include<stdlib.h>
-#include<time.h>
-#include<string.h>
-#include<math.h>
+//#define _CRT_SECURE_NO_WARNINGS
+//#include<stdio.h>
+//#include<stdlib.h>
+//#include<time.h>
+//#include<string.h>
+//#include<math.h>
 
 //int suyel(int n)
 //{
@@ -5095,21 +5095,383 @@
 //}
 
 ////[~페이지32 문제2~]
+//int main()
+//{
+//	int* array_address;
+//
+//	array_address = (int*)malloc(10 * sizeof(int));
+//	for (int i = 0; i < 10; i++)
+//	{
+//		array_address[i] = rand() % 10 + 1;
+//	}
+//	for (int i = 0; i < 10; i++)
+//	{
+//		printf("%d ", array_address[i]);
+//	}
+//	free(array_address);
+//	return 0;
+//}
+
+//void func_swap(int& a, int& b)
+//{
+//	int temp = a;
+//	a = b;
+//	b = temp;
+//}
+//void func_sort(int* pNum, int N)
+//{
+//	for (int i = 0; i < N; ++i)
+//	{
+//		for (int j = i; j < N; ++j)
+//		{
+//			if (pNum[i] > pNum[j])
+//				func_swap(pNum[i], pNum[j]);
+//		}
+//	}
+//}
+//int main()
+//{
+//	int N, * pNum;
+//	scanf("%d", &N);
+//	pNum = (int*)malloc(sizeof(int) * N);
+//
+//	srand((unsigned int)time(NULL));
+//
+//	printf("<랜덤으로 입력받은 수 출력>\n");
+//	for (int i = 0; i < N; i++)
+//	{
+//		*(pNum + i) = (rand() % N) + 1;
+//		printf("%2d", pNum[i]);
+//	}
+//	func_sort(pNum, N);
+//	printf("\n<오름차순 정렬된 수 출력>\n");
+//	for (int i = 0; i < N; i++)
+//	{
+//		printf("%2d", pNum[i]);
+//		if (i % 10 == 9)
+//			printf("\n");
+//	}
+//	free(pNum);
+//}
+
+////[~페이지33 문제1~]
+//#define _CRT_SECURE_NO_WARNINGS//scanf()함수를 쓰기위해 필요한 코드
+//#include<stdio.h> ///printf(), scanf()함수를 쓰기위해 필요한 라이브러리
+//#include<stdlib.h> ///malloc(), free(), srand()와 rand() 의 동적활당 함수를 쓰기위해 필요한 라이브러리
+//#include<time.h> ///time함수를 쓰기위해 계속 바뀌는 time시간를 seed로 사용하기 위해 필요한 라이브러리
+//void func_swap(int& a, int& b) //두곳에 저장되어 있는 숫자의 위치를 바꾸는 함수를 선언 & 동시에 &를 사용한 레퍼런스 함수를 사용 => &a 는 func_swap 함수선언에 사용된 pNum[i]와 변수 a가 같은 주소를 가지게함 똑같이, &b 는 func_swap 함수선언에 사용된 pNum[j]와 변수 b가 같은 주소를 가지게함 
+//{
+//	int temp = a; //첫번째 숫자 a를 임시 temp에 저장
+//	a = b; //두번째 숫자 b를 a에 저장
+//	b = temp; //temp 임시에 저장된 숫자를 b의 자리로 저장하여 a 와 b 의 숫자의 위치를 서로 바꿔줌
+//}
+//void func_sort(int* pNum, int N) //두 자리의 숫자 중 어느것이 더 큰지 비교하고 첫번째 숫자가 더 클경우 두번째 숫자를 위의 func_swap 함수를 이용해 바꾸는 함수를 선언
+//{
+//	for (int i = 0; i < N; ++i)///반복문으로 pNum[i]배열의 순서를 0부터 배열의 크기 N까지 1개씩 증가
+//	{
+//		for (int j = i; j < N; ++j)///반복문으로 두번째 pNum[j]배열의 시작을 pNum[i]와 같게 설정한 후, pNum[j]의 순서를 0부터 배열의 크기 N까지 1개씩 증가
+//		{
+//			if (pNum[i] > pNum[j]) //배열에 저장된 두개의 숫자 중 첫번째 배열에 저장된 숫자가 두번째 숫자보다 큰지 작은지 비교
+//				func_swap(pNum[i], pNum[j]); //첫번째 배열에 저장된 숫자가 두번째 숫자보다 클 경우, 숫자를 바꾸는 함수 사용
+//		}
+//	}
+//}
+//int main()
+//{
+//	int N, * pNum; //2개의 숫자 변수 선언, pNum은 배열인 포인터 변수
+//	scanf("%d", &N); //배열의 크기를 입력하는 코드
+//	pNum = (int*)malloc(sizeof(int) * N); //입력받은 배열의 크기를 사용해 동적활당 선언 및 동적활당 크기를 정함
+//
+//	srand((unsigned int)time(NULL)); //랜덤 숫자 가져옴
+//
+//	printf("<랜덤으로 입력받은 수 출력>\n");
+//	for (int i = 0; i < N; i++)///반복문으로 배열인 pNum의 주소를 1만큼 증가시키는데 변수가 int 이니 4byte씩 증가에서 배열의 순서를 0부터 1씩 증가시킴
+//	{
+//		*(pNum + i) = (rand() % N) + 1; //pNum 배열에 1~N 값을 저장함
+//		printf("%2d", pNum[i]); //출력
+//	}
+//	func_sort(pNum, N); //오름차순으로 정렬하는 함수
+//	printf("\n<오름차순 정렬된 수 출력>\n");
+//	for (int i = 0; i < N; i++)///반복문으로 배열의 순서를 0에서 1씩 증가시킴
+//	{
+//		printf("%2d", pNum[i]);
+//		if (i % 10 == 9) //오름차순으로 정렬된 숫자들을 출력하면서 10개의 숫자마다 (배열은 0에서 시작해 9까지니까) 새로운 줄로 만들어서 끊음
+//			printf("\n");
+//	}
+//	free(pNum); //마지막에 메모리 동적활당 해제
+//}
+// 
+////[~페이지33 문제2,3~]
+//#define _CRT_SECURE_NO_WARNINGS
+//#include<stdio.h>
+//#include<stdlib.h>
+//#include<time.h>
+//struct DATA
+//{
+//	int N, * pNum;
+//};
+//
+//void func_sort(DATA* data);
+//void func_swap(int& a, int& b);
+//
+//int main()
+//{
+//	DATA data;
+//
+//	scanf("%d", &data.N);
+//	data.pNum = (int*)malloc(sizeof(int) * data.N);
+//
+//	srand((unsigned int)time(NULL));
+//
+//	printf("<랜덤으로 입력받은 수 출력>\n");
+//	for (int i = 0; i < data.N; i++)
+//	{
+//		*(data.pNum + i) = (rand() % data.N) + 1;
+//		printf("%2d", data.pNum[i]);
+//	}
+//	func_sort(&data);
+//	printf("\n<오름차순 정렬된 수 출력>\n");
+//	for (int i = 0; i < data.N; i++)
+//	{
+//		printf("%2d", data.pNum[i]);
+//		if (i % 10 == 9)
+//			printf("\n");
+//	}
+//	free(data.pNum);
+//}
+//void func_sort(DATA *data)
+//{
+//	for (int i = 0; i < (*data).N; ++i)
+//	{
+//		for (int j = i; j < data->N; ++j)
+//		{
+//			if (data->pNum[i] > data->pNum[j])
+//				func_swap(data->pNum[i], data->pNum[j]);
+//		}
+//	}
+//}
+//void func_swap(int& a, int& b)
+//{
+//	int temp = a;
+//	a = b;
+//	b = temp;
+//}
+//
+//--------------파일이름 사용하는 코드들 새로운 단원 시작-----------------
+//#define _CRT_SECURE_NO_WARNINGS
+//#include<stdio.h>
+//void main()
+//{
+//	FILE* pFile;
+//	pFile = fopen("myfile.txt", "w");
+//	fprintf(pFile, "안녕하세요");
+//	fclose(pFile);
+//}
+//
+
+//#define _CRT_SECURE_NO_WARNINGS
+//#include<stdio.h>
+//void main()
+//{
+//	FILE* pFile;
+//	char name[100];
+//
+//	pFile = fopen("myfile.txt", "r");
+//	fscanf(pFile, "%s", name);
+//	printf("%s", name);
+//	fclose(pFile);
+//}
+//
+
+//#define _CRT_SECURE_NO_WARNINGS
+//#include<stdio.h>
+//void main()
+//{
+//	FILE* pFile;
+//	char name[100];
+//	pFile = fopen("myfile.txt", "w");
+//	for (int n = 0; n < 5; ++n)
+//	{
+//		fprintf(pFile, "파일에 쓰고 싶은 말을 입력하세요 : ");
+//		scanf("%s", name);
+//		fprintf(pFile, "%d번째 내용 )% - 10s]\n", n, name);
+//	}
+//	fclose(pFile);
+//}
+
+//#define _CRT_SECURE_NO_WARNINGS
+//#include<stdio.h>
+//void main()
+//{
+//	FILE* readfp, * writefp;
+//	char buff[1024];
+//	readfp = fopen("myfile1.txt", "r");
+//	writefp = fopen("outfile.txt", "w");
+//	if (readfp == NULL)
+//	{
+//		printf("파일을 찾지 못하였습니다.\n");
+//		return;
+//	}
+//	while (!feof(readfp))
+//	{
+//		fgets(buff, 1024, readfp);
+//		fputs(buff, writefp);
+//	}
+//	fclose(readfp);
+//	fclose(writefp);
+//}
+// 
+
+//#define _CRT_SECURE_NO_WARNINGS
+//#include<stdio.h>
+//#include<stdlib.h>
+//#define BUFF_SIZE 30
+//int main()
+//{
+//	char buff[BUFF_SIZE];
+//	int readLen = 0;
+//	FILE* src, * dst;// Source(근원), Destination(목적지)
+//	char name1[100], name2[100], enter;
+//	printf("입력받을 파일의 이름을 입력하세요 :");
+//	scanf("%s%c", name1, &enter);
+//
+//	printf("출력받을 파일의 이름을 입력하세요 :");
+//	gets_s(name2);
+//
+//	src = fopen(name1, "rb");
+//	dst = fopen(name2, "wb");
+//
+//	if (src == NULL || dst == NULL)
+//	{
+//		puts("파일을 못 찾음");
+//		return -1;
+//	}
+//	while (true)
+//	{
+//		readLen = fread(buff, 1, BUFF_SIZE, src);
+//		if (readLen < BUFF_SIZE)
+//		{
+//			if (feof(src) != 0)
+//			{
+//				fwrite(buff, 1, readLen, dst);
+//				puts("파일 복사 완료");
+//				break;
+//			}
+//			else
+//			{
+//				printf("파일 복사 실패");
+//				return -1;
+//			}
+//		}
+//		fwrite(buff, 1, BUFF_SIZE, dst);
+//	}
+//	if (fclose(src) != 0 || fclose(dst) != 0)
+//	{
+//		puts("파일을 닫지 못했습니다.");
+//		return -1;
+//	}
+//	return 0;
+//}
+
+//#define _CRT_SECURE_NO_WARNINGS
+//#include<stdio.h>
+//int main()
+//{
+//	FILE* fp = fopen("Coding.txt", "w");
+//	int i = 123;
+//	int j = -123;
+//	double f = 3.141592;
+//
+//	fprintf(fp, "폭맞추기\n");
+//	fprintf(fp, "i: %6d \n", i);
+//	fprintf(fp, "i: %7d \n", i);
+//	fprintf(fp, "i: %2d \n\n", i);
+//
+//	fprintf(fp, "오른쪽정렬\n");
+//	fprintf(fp, "i: %5d \n", i);
+//	fprintf(fp, "왼쪽정렬\n");
+//	fprintf(fp, "i: %-5d끝 \n\n", i);
+//
+//	fprintf(fp, "#문자의 사용\n");
+//	fprintf(fp, "i: %#x \n", i);
+//	fprintf(fp, "j: %#x \n\n", i);
+//
+//	fprintf(fp, "부호붙이기\n");
+//	fprintf(fp, "i: %+d, j: %+d \n", i, j);
+//
+//	fclose(fp);
+//	return 0;
+//}
+
+////[~페이지36 문제1~]
+//#define _CRT_SECURE_NO_WARNINGS
+//#include<stdio.h>
+//int main()
+//{
+//	FILE* begin = fopen("Page36Q1.txt", "w");
+//	fprintf(begin, "HelloWorld");
+//	fclose(begin);
+//	return 0;
+//}
+
+////[~페이지36 문제2~]
+//#define _CRT_SECURE_NO_WARNINGS
+//#include<stdio.h>
+//int main()
+//{
+//	FILE* first, * second;
+//	
+//	first = fopen("Page36Q2-1.txt", "w");
+//	fprintf(first, "HelloWorld");
+//	
+//	second = fopen("Page36Q2-2.txt", "w");
+//	fprintf(second, "Byeworld");
+//	
+//  fclose(first);
+//  fclose(second);
+//	return 0;
+//}
+
+////[~페이지36 문제3,4,5~]
+#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
 int main()
 {
-	int* array_address;
+	FILE* first, * second;
+	const int N = 100;
+	char input1[N], input2[N];
+	
+	first = fopen("Page36Q2-1.txt", "w");
+	scanf("%s", input1);
+	fprintf(first, input1);
+	
 
-	for (int i = 0; i < 10; i++)
+	second = fopen("Page36Q2-2.txt", "w");
+	scanf("%s", input2);
+	fprintf(second, input2);
+
+	fclose(first);
+	fclose(second);
+
+	printf("\n\n\n");
+	first = fopen("Page36Q2-1.txt", "r");
+	second = fopen("Page36Q2-2.txt", "r");
+	puts(input1);
+	puts(input2);
+
+	int same_count = 0;
+	for (int i = 0;i<N; i++)
 	{
-		array_address[i] = rand();
+		if (input1[i] == input2[i])
+		{
+			same_count++;
+		}
+		else if (input1[i] == NULL && input2[i] == NULL)
+			break;
 	}
-	array_address = (int*)malloc(10 * sizeof(int));
-	for (int i = 0; i < 10; i++)
-	{
-		array_address[i] = array[i];
-		printf("%d ", array_address[i]);
-	}
-	free(array_address);
+	printf("같은 문자의 갯수는 %d개입니다.", same_count);
+	fclose(first);
+	fclose(second);
 	return 0;
 }
 
